@@ -1,0 +1,16 @@
+.header {
+    /*position: fixed;*/
+}
+
+.blurbs_container {
+	position: relative;
+    max-width: 1400px;
+    margin: 40px auto0 auto;
+    display: flex;
+}
+
+.blurb {
+    padding: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+}
