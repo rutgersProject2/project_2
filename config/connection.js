@@ -10,11 +10,11 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     host: "localhost",
     //enter user
-    user: "",
+    user: "root",
     //enter password
-    password: "",
+    password: "password",
     //create database
-    database: ""
+    database: "dbo"
   });
 }
 

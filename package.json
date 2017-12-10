@@ -21,6 +21,9 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
-    "mysql": "^2.15.0"
+    "hover.css": "^2.2.1",
+    "materializecss": "^1.0.11",
+    "mysql": "^2.15.0",
+    "remodal": "^1.1.1"
   }
 }
