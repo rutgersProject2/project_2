@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <title>Test</title>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Javascript -->
+    <script src="/assets/js/app.js"></script>
+    <!--Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!--Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/a7aa792cdb.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Leckerli+One|Montserrat|Yellowtail" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header" id="main_header">
+        <h2>Test</h2> <a href="test.html">#</a>
+        <!-- Nav Bar -->
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <!-- Add onclick event that redirects user down the page to the sign up section -->
+                <!-- <a class="nav-link" href="doctor.html">Sign Up</a> -->
+                <button type="button" id="doc_signup" class="btn btn-outline-dark">Sign Up</button>
+            </li>
+            <li class="nav-item">
+                <!-- <a class="nav-link" href="doc_profile.html">Log In</a> -->
+                <button type="button" id="doc_login" class="btn btn-outline-dark">Log In</button>
+            </li>
+        </ul>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal" id="doc_login">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Log In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input class="form-control" id="doc_userName" type="number">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input class="form-control" id="doc_password" type="number">
+                        </div>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-login" type="button" class="btn btn-dark">Log In</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="doctor_container">
+        <!-- Page banner -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Get discovered. Keep Booking.</h1>
+                <p class="lead">Let us do the work for you. Test can connect you with xxx of new patients in your area.</p>
+            </div>
+        </div>
+        <div class="banner" id="doctor_banner">
+        </div>
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <label for="doc_firName">First Name</label>
+                    <input type="name" class="form-control" id="doc_firName" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="doc_lstName">Last Name</label>
+                    <input type="name" class="form-control" id="doc_lstName" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="doc_practice">Practice Number</label>
+                    <input type="number" class="form-control" id="doc_practice" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="doc_specialty">Speacialty</label>
+                    <input type="name" class="form-control" id="doc_specialty" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="doc_email">Email</label>
+                    <input type="email" class="form-control" id="doc_email" aria-describedby="emailHelp" placeholder="">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="doc_phone">Phone Number</label>
+                    <input type="password" class="form-control" id="doc_phone" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!-- Sub footer -->
+    <div id="sub_footer" class="col-lg-12 text-center">
+        <h4>Help</h4>
+        <a class="nav-link" href="doctor.html">Providers</a>
+        <a class="nav-link" href="patient_login.html">View your medical records </a>
+    </div>
+    <!-- Footer -->
+    <div id="footer" class="col-lg-12 text-center">
+        Test &copy;2017
+    </div>
+</body>
+
+</html>
