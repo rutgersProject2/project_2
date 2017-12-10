@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <title>Test</title>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Javascript -->
+    <script src="/assets/js/app.js"></script>
+    <!--Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!--Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/a7aa792cdb.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Leckerli+One|Montserrat|Yellowtail" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header" id="main_header">
+        <h2>Test</h2> <a href="test.html">#</a>
+        <!-- Nav Bar -->
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <!-- Add onclick event that redirects user down the page to the sign up section -->
+                <!-- <a class="nav-link" href="doctor.html">Sign Up</a> -->
+                <!-- <button type="button" class="btn btn-outline-dark">Sign Up</button> -->
+            </li>
+            <li class="nav-item">
+                <!-- <a class="nav-link" href="doc_profile.html">Log In</a> -->
+                <button type="button" id="doc_logout" class="btn btn-outline-dark">Log Out</button>
+            </li>
+        </ul>
+    </div>
+    <!-- Adding Patient Modal -->
+    <div class="modal" id="patient_addModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add a patient</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="patient_firstName">First Name:</label>
+                                    <input class="form-control" id="patient_firstName" type="number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="patient_lstName">Last Name:</label>
+                                    <input class="form-control" id="patient_lstName" type="number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="patient_birth">Date of Birth:</label>
+                                    <input class="form-control" id="patient_birth" type="number">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="patient_address">Address</label>
+                                <input type="text" class="form-control" id="patient_address" placeholder="1234 Main St">
+                            </div>
+                            <div class="form-group">
+                                <label for="patient_address_2">Address 2</label>
+                                <input type="text" class="form-control" id="patient_address_2" placeholder="Apartment, studio, or floor">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="patient_city">City</label>
+                                    <input type="text" class="form-control" id="patient_city">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="patient_state">State</label>
+                                    <select id="patient_state" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="patient_zip">Zip</label>
+                                    <input type="text" class="form-control" id="patient_zip">
+                                </div>
+                            </div>
+                        </form>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="save_patient_info" type="button" class="btn btn-dark">Save Info</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Adding Patient Records Modal -->
+    <div class="modal" id="patient_addModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update the Patient Record</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <form>
+                            <div class="form-group">
+                                <div class="form-check" id="hepatitis">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Hepatitis
+                                    </label>
+                                </div>
+                                <div class="form-check" id="hsv1">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Hsv1
+                                    </label>
+                                </div>
+                                <div class="form-check" id="hsv2">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Hsv2
+                                    </label>
+                                </div>
+                                <div class="form-check" id="hiv">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> HIV
+                                    </label>
+                                </div>
+                                <div class="form-check" id="aids">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> AIDS
+                                    </label>
+                                </div>
+                                <div class="form-check" id="hltv">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Hltv
+                                    </label>
+                                </div>
+                                <div class="form-check" id="hpv">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> HPV
+                                    </label>
+                                </div>
+                                <div class="form-check" id="molluscum_contag">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Molluscum Contag
+                                    </label>
+                                </div>
+                                <div class="form-check" id="zika">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Zika
+                                    </label>
+                                </div>
+                                <div class="form-check" id="chlamydia">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Chlamydia
+                                    </label>
+                                </div>
+                                <div class="form-check" id="gonorrhea">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Gonorrhea
+                                    </label>
+                                </div>
+                                <div class="form-check" id="syphilis">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Syphilis
+                                    </label>
+                                </div>
+                                <div class="form-check" id="trich">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Trich
+                                    </label>
+                                </div>
+                                <div class="form-check" id="crabs">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Crabs
+                                    </label>
+                                </div>
+                                <div class="form-check" id="scabies">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Scabies
+                                    </label>
+                                </div>
+                                <div class="form-check" id="bv_yeast">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> BV_yeast
+                                    </label>
+                                </div>
+                                <div class="form-check" id="chancroid">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Chancroid
+                                    </label>
+                                </div>
+                                <div class="form-check" id="donovanosis">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Donovanosis
+                                    </label>
+                                </div>
+                                <div class="form-check" id="warts">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Genital Warts
+                                    </label>
+                                </div>
+                                <div class="form-check" id="pid">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> PID
+                                    </label>
+                                </div>
+                                <div class="form-check" id="ngu">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> NGU
+                                    </label>
+                                </div>
+                                <div class="form-check" id="parasites">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Intestinal Parasites
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="save_patient_info" type="button" class="btn btn-dark">Save Info</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="doc_profile_container">
+        <div class="row">
+            <div id="doc_profile" class="col-lg-12 text-left">
+                <div>
+                    <div class="card">
+                        <div class="card-header">
+                            Your Profile
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">*Display the Doctor's Medical record Here* READ</h4>
+                            <p id="event" class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="add_patient" class="col-lg-12 text-left">
+                <div>
+                    <div class="card">
+                        <div class="card-header">
+                            Need to add a new patient?
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Simply fill out form</h4>
+                            <p id="event" class="card-text">
+                                <!-- trigger the modal -->
+                                <button type="button" id="patient_add_btn" class="btn btn-outline-dark">Add new patient</button>
+                                <button type="button" id="patient_add_btn" class="btn btn-outline-dark">Add records to Patient</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sub footer -->
+    <div id="sub_footer" class="col-lg-12 text-center">
+        <h4>Help</h4>
+        <a class="nav-link" href="doctor.html">Providers</a>
+        <a class="nav-link" href="patient_login.html">View your medical records </a>
+    </div>
+    <!-- Footer -->
+    <div id="footer" class="col-lg-12 text-center">
+        Test
+</body>
+
+</html>
