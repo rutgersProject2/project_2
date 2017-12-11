@@ -39,6 +39,8 @@ function objToSql(ob) {
 
 var orm = {
 
+
+   //Calling the stored procedure and pass it from the app.js file.  
   all: function(stored_proc, cb) {
     var queryString = "call " + stored_proc + ";";
     connection.query(queryString, function(err, result) {
@@ -52,13 +54,10 @@ var orm = {
   
 
 
-  createDoc: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+  createDoc: function(stored_proc, vals, cb) {
+    var queryString = "call " + stored_proc;
 
     queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
