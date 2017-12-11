@@ -38,7 +38,7 @@ CREATE TABLE `address` (
   KEY `doctorsID` (`doctorsID`),
   CONSTRAINT `address_ibfk_1` FOREIGN KEY (`patientID`) REFERENCES `patients` (`patientID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `address_ibfk_2` FOREIGN KEY (`doctorsID`) REFERENCES `doctors` (`doctorsID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (1,NULL,NULL,NULL,NULL,NULL,1,NULL),(2,NULL,NULL,NULL,NULL,NULL,NULL,1);
+INSERT INTO `address` VALUES (1,NULL,NULL,NULL,NULL,NULL,5,NULL),(2,'fasldf','asdfkl','aslfkj','caksl','29238',NULL,NULL),(3,NULL,NULL,NULL,NULL,NULL,6,NULL),(4,'fasldf','asdfkl','aslfkj','caksl','29238',7,NULL),(5,'fasldf','asdfkl','aslfkj','caksl','29238',8,NULL),(6,'fasldf','asdfkl','aslfkj','caksl','11111',9,NULL),(7,'askdflsadj','234','New City','NY','2399843',10,NULL);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `bridge_diag` (
   PRIMARY KEY (`diagID`),
   KEY `patientID` (`patientID`),
   CONSTRAINT `bridge_diag_ibfk_1` FOREIGN KEY (`patientID`) REFERENCES `patients` (`patientID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,6 @@ CREATE TABLE `bridge_diag` (
 
 LOCK TABLES `bridge_diag` WRITE;
 /*!40000 ALTER TABLE `bridge_diag` DISABLE KEYS */;
-INSERT INTO `bridge_diag` VALUES (1,'2017-12-10 05:00:00',1);
 /*!40000 ALTER TABLE `bridge_diag` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -116,7 +115,7 @@ CREATE TABLE `doctors` (
   `email` varchar(20) NOT NULL,
   `phone` varchar(20) NOT NULL,
   PRIMARY KEY (`doctorsID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +124,7 @@ CREATE TABLE `doctors` (
 
 LOCK TABLES `doctors` WRITE;
 /*!40000 ALTER TABLE `doctors` DISABLE KEYS */;
-INSERT INTO `doctors` VALUES (1,'Smart','The Smartest','12ABSWERDS','internist','asf@smart.com','123456789');
+INSERT INTO `doctors` VALUES (5,'aaa','sss','ff','dd','awer@agla','23234'),(6,'aaa','sss','ff','dd','awer@agla','23234'),(7,'aaa','sss','ff','dd','awer@agla','23234'),(8,'new doct','sss','ff','dd','awer@agla','23234'),(9,'new doct1','sss','ff','dd','awer@agla','23234'),(10,'asadfs','asdfsdfasd','dkfj23293','asaladf','aslkdjf@gasdkfl','2324343');
 /*!40000 ALTER TABLE `doctors` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -251,7 +250,7 @@ CREATE TABLE `nonTreatable` (
   PRIMARY KEY (`nonTreatableID`),
   KEY `diagID` (`diagID`),
   CONSTRAINT `nontreatable_ibfk_1` FOREIGN KEY (`diagID`) REFERENCES `bridge_diag` (`diagID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -260,7 +259,6 @@ CREATE TABLE `nonTreatable` (
 
 LOCK TABLES `nonTreatable` WRITE;
 /*!40000 ALTER TABLE `nonTreatable` DISABLE KEYS */;
-INSERT INTO `nonTreatable` VALUES (1,1,0,0,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `nonTreatable` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -326,7 +324,7 @@ CREATE TABLE `patients` (
   PRIMARY KEY (`patientID`),
   KEY `doctorsID_idx` (`doctorsID`),
   CONSTRAINT `doctorsID` FOREIGN KEY (`doctorsID`) REFERENCES `doctors` (`doctorsID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -335,7 +333,6 @@ CREATE TABLE `patients` (
 
 LOCK TABLES `patients` WRITE;
 /*!40000 ALTER TABLE `patients` DISABLE KEYS */;
-INSERT INTO `patients` VALUES (1,'Skept','Skeptic','1960-12-22',1);
 /*!40000 ALTER TABLE `patients` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -391,7 +388,7 @@ CREATE TABLE `treatable` (
   PRIMARY KEY (`treatableID`),
   KEY `diagID` (`diagID`),
   CONSTRAINT `treatable_ibfk_1` FOREIGN KEY (`diagID`) REFERENCES `bridge_diag` (`diagID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -400,13 +397,85 @@ CREATE TABLE `treatable` (
 
 LOCK TABLES `treatable` WRITE;
 /*!40000 ALTER TABLE `treatable` DISABLE KEYS */;
-INSERT INTO `treatable` VALUES (1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `treatable` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
+-- Dumping events for database 'dbo'
+--
+
+--
 -- Dumping routines for database 'dbo'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `all_patients` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `all_patients`()
+    COMMENT 'Search for a doctor'
+BEGIN
+SELECT 
+	d.doctorsID 'Dr_ID',
+	d.First_Name 'Dr_First_Name',
+    d.Last_Name 'Dr_Last_Name',
+    d.Practice_Number,
+    d.Specialty,
+    d.Email,
+    d.Phone,
+    d.Street_Address 'Dr_Address1',
+    d.Apartment_Num 'Dr_APT_Num',
+    d.City 'Dr_City',
+    d.State 'Dr_State',
+    d.Zip_Code 'Dr_Zip', 
+    p.patientID,
+    p.doctorsID,
+    p.First_Name'Patient First Name',
+    p.Last_Name 'Patient Last Name',
+    p.DOB,
+    p.Street_Address,
+    p.Apartment_Num,
+    p.City,
+    p.State,
+    p.Zip_Code,
+    p.Diagnosis_Date,
+    p.hepatitis,
+    p.hsv1,
+    p.hsv2,
+    p.hiv,
+    p.aids,
+    p.hltv,
+    p.hpv,
+    p.molluscum_contag,
+    p.zika,
+    p.chlamydia,
+    p.gonorrhea,
+    p.syphilis,
+    p.trich,
+    p.crabs,
+    p.scabies,
+    p.bv_yeast,
+    p.chancroid,
+    p.donovanosis,
+    p.genital_warts,
+    p.pid,
+    p.ngu,
+    p.inetst_parasites,
+    p.mycoplasma,
+    p.lgv
+FROM doctors_vu d , patient_vu p
+WHERE d.doctorsID = p.doctorsID;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `find_dr` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -521,6 +590,57 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `new_doctor` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `new_doctor`(IN First_Name varchar(20),
+      IN Last_Name varchar(20),
+      IN Practice_Number varchar(20), 
+      IN Specialty varchar(20),
+      IN Email varchar(20),
+      IN Phone varchar(20),
+      IN Street_Address varchar(20),
+      IN Apartment_Num varchar(20),
+      IN City varchar(20),
+      IN State varchar(20),
+      IN Zip_Code  varchar(20)
+	
+    )
+BEGIN
+
+
+   INSERT INTO doctors(d_fname, d_lname, practiceNum, specialty, email, phone) 
+     VALUES(
+     
+      First_Name,
+      Last_Name,
+      Practice_Number,
+      Specialty,
+      Email,
+      Phone
+
+     );
+
+	update address set 
+	
+    address1 =Street_Address, address2 =Apartment_Num, city = City, state = State, zip  = Zip_Code
+	
+    where doctorsID = LAST_INSERT_ID();
+    
+COMMIT;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Final view structure for view `doctors_vu`
@@ -535,7 +655,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `doctors_vu` AS select `d`.`doctorsID` AS `doctorsID`,`d`.`d_fname` AS `First_Name`,`d`.`d_lname` AS `Last_Name`,`d`.`practiceNum` AS `Practice_Number`,`d`.`specialty` AS `Specialty`,`d`.`email` AS `Email`,`d`.`phone` AS `Phone`,`a`.`address1` AS `Street_Address`,`a`.`address2` AS `Apartment_Num`,`a`.`city` AS `City`,`a`.`state` AS `State`,`a`.`zip` AS `Zip_Code` from (`doctors` `d` join `address` `a`) where ((`d`.`doctorsID` = `d`.`doctorsID`) and (`a`.`doctorsID` is not null)) */;
+/*!50001 VIEW `doctors_vu` AS select `d`.`doctorsID` AS `doctorsID`,`d`.`d_fname` AS `First_Name`,`d`.`d_lname` AS `Last_Name`,`d`.`practiceNum` AS `Practice_Number`,`d`.`specialty` AS `Specialty`,`d`.`email` AS `Email`,`d`.`phone` AS `Phone`,`a`.`address1` AS `Street_Address`,`a`.`address2` AS `Apartment_Num`,`a`.`city` AS `City`,`a`.`state` AS `State`,`a`.`zip` AS `Zip_Code` from (`doctors` `d` left join `address` `a` on(((`d`.`doctorsID` = `a`.`doctorsID`) and (`a`.`doctorsID` is not null)))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -585,4 +705,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-10  0:19:41
+-- Dump completed on 2017-12-10 23:28:35
