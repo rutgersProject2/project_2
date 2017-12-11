@@ -53,7 +53,7 @@ var orm = {
   },
   
 
-
+  //Creating a new doctor profile. (This must be identical to the database number of columns defined at the stored procdure called new_doc)
   createDoc: function(stored_proc, vals, cb) {
     var queryString = "call " + stored_proc;
 
@@ -72,13 +72,12 @@ var orm = {
     });
   },
 
-  createPatient: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+
+  //Creating a new patient profile. (This must be identical to the database number of columns defined at the stored procdure called new_patient)
+  createPatient: function(stored_proc, vals, cb) {
+    var queryString = "call " + stored_proc;
 
     queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
@@ -92,6 +91,7 @@ var orm = {
       cb(result);
     });
   },
+
 
 update: function(table, objColVals, condition, cb) {
 var queryString = "UPDATE " + table;
