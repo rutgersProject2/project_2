@@ -9,7 +9,7 @@
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Javascript -->
-    <script src="/assets/js/app.js"></script>
+    <!-- <script src="/assets/js/app.js"></script> -->
     <!--Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!--Popper -->
@@ -23,21 +23,19 @@
 
 <body>
     <!-- Header -->
-    <div class="header" id="main_header">
-        <h2>Test</h2> <a href="test.html">#</a>
-        <!-- Nav Bar -->
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <!-- Add onclick event that redirects user down the page to the sign up section -->
-                <!-- <a class="nav-link" href="doctor.html">Sign Up</a> -->
-                <button type="button" id="doc_signup" class="btn btn-outline-dark">Sign Up</button>
-            </li>
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="doc_profile.html">Log In</a> -->
-                <button type="button" id="doc_login" class="btn btn-outline-dark" data-toggle="modal" data-target="#doc_login_modal">Log In</button>
-            </li>
-        </ul>
-    </div>
+    <div class="head_container">
+        <div class="header" id="main_header">
+            <h2 id="app_name">Verify<span><a href="test.html">#</a></span></h2>
+            <!-- Nav Bar -->
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="doctor.html">Providers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="patient_login.html">Patients </a>
+                </li>
+            </ul>
+        </div>
     <!-- Login Modal -->
     <div class="modal" id="doc_login_modal">
         <div class="modal-dialog" role="document">
@@ -104,7 +102,7 @@
                     <label for="doc_phone">Phone Number</label>
                     <input type="password" class="form-control" id="doc_phone" placeholder="">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="dr_create_btn" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

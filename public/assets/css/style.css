@@ -1,16 +1,94 @@
-.header {
-    /*position: fixed;*/
+#nav-bar {
+    margin: 0px 20px 75px 20px;
+    padding: 20px;
+    color: #eee;
+    font-family: 'Barlow', sans-serif;
+}
+
+.nav-link {
+    color: #eee;
+    font-family: 'Barlow', sans-serif;
 }
 
 .blurbs_container {
-	position: relative;
+    position: relative;
     max-width: 1400px;
     margin: 40px auto0 auto;
     display: flex;
+    
 }
 
 .blurb {
     padding: 20px;
     margin-bottom: 20px;
     flex: 1;
+}
+
+.head_container {
+    background-size: cover;
+    height: 700px;
+}
+
+#head_container_index {
+    background-image: url("../img/ppl_date.jpeg");
+}
+
+.banner {
+    align-self: center;
+    color: #ffffff;
+    text-align: center;
+    width: 90%;
+    height: 200px;
+}
+
+#banner_info {
+    /*font-family: 'Cabin', sans-serif;*/
+    /*font-family: 'Fjalla One', sans-serif;*/
+    /*font-family: 'Libre Baskerville', serif;*/
+    font-family: 'Barlow', sans-serif;
+}
+
+.banner-main {
+    /*font-weight: bold;*/
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+.banner-lead {
+    font-size: 30px;
+}
+
+#picture_div {
+	background-image: url("../img/doctors.jpeg");
+    background-size: cover;
+    height: 410px;
+}
+
+#provider_container {
+	margin-bottom: 40px;
+}
+
+h5 {
+	letter-spacing: 2px;
+    font-family: 'Barlow', sans-serif;
+
+}
+#sub_footer {
+	color: #eee;
+    background-color: #253f4b;
+    padding-top: 20px;
+    font-family: 'Barlow', sans-serif;
+
+}
+
+#footer {
+    color: #eee;
+    background-color: #172331;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+
 }
