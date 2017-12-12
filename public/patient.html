@@ -9,7 +9,7 @@
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Javascript -->
-    <script src="/assets/js/app.js"></script>
+    <!-- <script src="/assets/js/app.js"></script> -->
     <!--Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!--Popper -->
@@ -23,21 +23,19 @@
 
 <body>
     <!-- Header -->
-    <div class="header" id="main_header">
-        <h2>Test</h2> <a href="test.html">#</a>
-        <!-- Nav Bar -->
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <!-- Add onclick event that redirects user down the page to the sign up section -->
-                <!-- <a class="nav-link" href="doctor.html">Sign Up</a> -->
-                <!-- <button type="button" class="btn btn-outline-dark">Sign Up</button> -->
-            </li>
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="doc_profile.html">Log In</a> -->
-                <button type="button" id="patient_logout" class="btn btn-outline-dark">Log Out</button>
-            </li>
-        </ul>
-    </div>
+    <div class="head_container">
+        <div class="header" id="main_header">
+            <h2 id="app_name">Verify<span><a href="test.html">#</a></span></h2>
+            <!-- Nav Bar -->
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="doctor.html">Providers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="patient_login.html">Patients </a>
+                </li>
+            </ul>
+        </div>
     <div class="container" id="patient_profile_container">
         <div class="row">
             <div id="patient_profile" class="col-lg-12 text-left">
