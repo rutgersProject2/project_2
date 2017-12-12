@@ -10,6 +10,11 @@
     font-family: 'Barlow', sans-serif;
 }
 
+#logo {
+    margin-top: -15px;
+    margin-left: 10px;
+}
+
 .blurbs_container {
     position: relative;
     max-width: 1400px;
@@ -35,6 +40,7 @@
 
 .banner {
     align-self: center;
+    margin-left: 45px;
     color: #ffffff;
     text-align: center;
     width: 90%;
