@@ -36,43 +36,46 @@
                 </li>
             </ul>
         </div>
-    <!-- Login Modal -->
-    <div class="modal" id="doc_login_modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Log In</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input class="form-control" id="doc_userName" type="number">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input class="form-control" id="doc_password" type="number">
-                        </div>
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button id="btn-login" type="button" class="btn btn-dark">Log In</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- Login Modal -->
+        <div class="modal" id="doc_login_modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input class="form-control" id="doc_userName" type="number">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input class="form-control" id="doc_password" type="number">
+                            </div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-login" type="button" class="btn btn-dark">Log In</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container" id="doctor_container">
-        <!-- Page banner -->
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-3">Get discovered. Keep Booking.</h1>
-                <p class="lead">Let us do the work for you. Test can connect you with xxx of new patients in your area.</p>
+
+        <div class="container" id="doctor_container">
+            <!-- Page banner -->
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-3">Get discovered. Keep Booking.</h1>
+                    <p class="lead">Let us do the work for you. Test can connect you with xxx of new patients in your area.</p>
+                </div>
             </div>
-        </div>
+            <div class="banner" id="doctor_banner">
+            </div>
         <div class="row" id="createADoc">
             <form>
                 <div class="form-group">
@@ -96,6 +99,26 @@
                     <input type="email" class="form-control" id="doc_email" aria-describedby="emailHelp" placeholder="">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
+                                  <div class="form-group">
+                        <label for="Street_Address">Address 1</label>
+                        <input type="email" class="form-control" id="Street_Address" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="Apartment_Num">Address 2</label>
+                        <input type="email" class="form-control" id="Apartment_Num" placeholder="Apt, Floor, Suite">
+                    </div>
+                    <div class="form-group">
+                        <label for="City">City</label>
+                        <input type="email" class="form-control" id="City" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="State">State</label>
+                        <input type="email" class="form-control" id="State" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="Zip_Code">Zipcode</label>
+                        <input type="email" class="form-control" id="Zip_Code" placeholder="">
+                    </div>
                 <div class="form-group">
                     <label for="doc_phone">Phone Number</label>
                     <input type="password" class="form-control" id="doc_phone" placeholder="">
@@ -103,7 +126,6 @@
                 <button id="dr_create_btn" class="btn btn-primary">Submit</button>
             </form>
         </div>
-    </div>
     </div>
     <!-- Sub footer -->
     <div id="sub_footer" class="col-lg-12 text-center">
