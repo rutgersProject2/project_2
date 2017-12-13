@@ -24,6 +24,7 @@
     "hover.css": "^2.2.1",
     "materializecss": "^1.0.11",
     "mysql": "^2.15.0",
+    "path": "^0.12.7",
     "remodal": "^1.1.1"
   }
 }

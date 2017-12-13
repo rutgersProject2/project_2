@@ -1,6 +1,7 @@
 var express = require("express");
 
 var router = express.Router();
+var path = require("path");
 
 // Import the model (burger.js) to use its database functions.
 var burger = require("../models/app.js");
@@ -13,7 +14,7 @@ router.get("/", function(req, res) {
       burgers: data
     };
     //console.log(hbsObject);
-    res.render("index", hbsObject);
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 });
 
