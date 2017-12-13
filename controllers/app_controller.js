@@ -8,25 +8,26 @@ var burger = require("../models/app.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-
-  burger.all(function(data) {
-    var hbsObject = {
-      burgers: data
-    };
-    //console.log(hbsObject);
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
-});
+
+
+// router.get("/patient", function (req, res){
+
+//   res.render("patient", data)
+// })
+
+
 
 router.post("/api/doctors", function(req, res) {
 
 
-    var fname = req.body.First_Name;
-    var Last_Name = req.body.Last_Name;
-    var Practice_Number = req.body.Practice_Number;
-    var Specialty = req.body.Specialty;
-    var Email = req.body.Email;
-    var Phone = req.body.Phone;
+    var fname = req.body.firstName;
+    var Last_Name = req.body.lastName;
+    var Practice_Number = req.body.practice;
+    var Specialty = req.body.specialty;
+    var Email = req.body.docEmail;
+    var Phone = req.body.docPhone;
     var Street_Address = req.body.Street_Address;
     var Apartment_Num = req.body.Apartment_Num;
     var City = req.body.City;

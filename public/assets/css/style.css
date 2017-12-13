@@ -80,11 +80,18 @@ h5 {
 
 }
 #sub_footer {
+    position: fixed;
+    bottom: 0;
 	color: #eee;
     background-color: #253f4b;
     padding-top: 20px;
     font-family: 'Barlow', sans-serif;
 
+}
+
+#createADoc {
+    margin-bottom: 200px;
+    margin-top: 0;
 }
 
 #footer {
