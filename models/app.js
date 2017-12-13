@@ -7,15 +7,11 @@ var burger = {
     orm.all("all_patients", function (res) {
 
       cb(res);
-
-
-
     });
   },
 
-  createDoc: function (cols, vals, cb) {
-
-    orm.createDoc("new_doctor", cols, vals, function (res) {
+  createDoc: function (vals, cb) {
+    orm.createDoc("new_doctor", vals, function (res) {
       cb(res);
     });
   },
