@@ -19,22 +19,28 @@
     <link href="https://fonts.googleapis.com/css?family=Anton|Leckerli+One|Montserrat|Yellowtail" rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
     <!-- Header -->
-    <div class="head_container">
-        <div class="header" id="main_header">
-            <h2 id="app_name">Verify<span><a href="test.html">#</a></span></h2>
+    <!-- Header -->
+    <div class="head_container_other">
+        <div class="row" id="nav-bar-other">
+            <div div class="col-lg-7 text-left" id="main_header">
+                <h2 id="app_name">Verify <span><img id="logo" src="assets/img/verify-logo-eee.png" height="35px" width="35px"></span></h2>
+            </div>
             <!-- Nav Bar -->
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="doctor.html">Providers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="patient_login.html">Patients </a>
-                </li>
-            </ul>
+            <div id="nav" class="col-lg-5 text-end">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="doctor.html">Providers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient_login.html">Patients </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+    <hr>
     <!-- Adding Patient Modal -->
     <div class="modal" id="patient_addModal">
         <div class="modal-dialog" role="document">
@@ -141,13 +147,13 @@
         <div class="row">
             <div id="doc_profile" class="col-lg-12 text-left">
                 <div>
-                    <div class="card">
-                        <div class="card-header">
+                    <div class="id-box" id="doc-box">
+                        <div class="box-heading">
                             Your Profile
                         </div>
-                        <div class="card-body">
-                            <h4 class="card-title">*Display the Doctor's Medical record Here* READ</h4>
-                            <p id="event" class="card-text"></p>
+                        <div class="box-body" id="doc-box-body">
+                        Read Dr. Info Here
+                        
                         </div>
                     </div>
                 </div>
@@ -173,15 +179,12 @@
             </div>
         </div>
     </div>
-    <!-- Sub footer -->
-    <div id="sub_footer" class="col-lg-12 text-center">
-        <h4>Help</h4>
-        <a class="nav-link" href="doctor.html">Providers</a>
-        <a class="nav-link" href="patient_login.html">View your medical records </a>
+    <!-- footer -->
+    <div id="footer_other" class="col-lg-12 text-center">
+        Verify &copy; 2017
     </div>
-    <!-- Footer -->
-    <div id="footer" class="col-lg-12 text-center">
-        Test
+    </div>
+    <script type="text/javascript" src="/assets/js/doctor.js"></script>
 </body>
 
 </html>
