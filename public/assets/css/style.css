@@ -31,6 +31,34 @@ i {
     left: 45%;
 }
 
+label {
+    color: #172331;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+#med_web {
+    margin-left: -50px;
+    margin-bottom: 20px;
+
+}
+
+.button {
+    border-radius: 8px;
+    padding: 6px 20px;
+    font-size: 18px;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 2px;
+    background-color: #eee;
+    border-color: #172331;
+    color: #172331;
+}
+
+.button:hover {
+    background-color: #253f4b;
+    color: white;
+}
+
 .blurb_head {
     text-align: center;
 }
@@ -51,6 +79,20 @@ i {
     padding: 20px;
     margin-bottom: 20px;
     flex: 1;
+}
+
+.blurbs_container_DR {
+    position: relative;
+    max-width: 1400px;
+    margin: 40px auto0 auto;
+    display: flex;
+}
+
+.blurb_DR {
+    padding: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    color: #172331;
 }
 
 .head_container {
@@ -93,6 +135,10 @@ i {
     font-size: 30px;
 }
 
+#banner_container {
+    margin-bottom: 385px;
+
+}
 #picture_div {
     background-image: url("../img/doctors.jpeg");
     background-size: cover;
@@ -109,9 +155,10 @@ h5 {
 }
 
 
-
+#doctor_container {
+    margin-bottom: 100px;
+}
 #createADoc {
-    margin-bottom: 200px;
     margin-top: 0;
 }
 
@@ -123,8 +170,8 @@ h5 {
 }
 
 #footer_other {
-    position: fixed;
-    bottom: 0;
+    /*position: fixed;*/
+    /*bottom: 0;*/
     color: #eee;
     background-color: #172331;
     height: 50px;
