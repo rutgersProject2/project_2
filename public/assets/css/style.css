@@ -37,9 +37,10 @@ label {
     font-weight: bold;
 }
 
-#med_web {
-    margin-left: -50px;
-    margin-bottom: 20px;
+#med_1 {
+    /*margin-left: -50px;*/
+    /*margin-bottom: 20px;*/
+    margin-right: 500px;
 
 }
 
@@ -104,8 +105,8 @@ label {
     background-image: url("../img/ppl_date.jpeg");
 }
 
-.head_container_other {
-    /*background-color: #253f4b;*/
+#head_container_other {
+    background-image: url("../img/med_1_crop.png")
 }
 
 .banner {
@@ -131,12 +132,23 @@ label {
     letter-spacing: 2px;
 }
 
+.banner-main-DR {
+    font-weight: bold;
+    font-size: 53px;
+    letter-spacing: 2px;
+}
+
 .banner-lead {
     font-size: 30px;
 }
 
+.banner-lead-DR {
+    font-size: 30px;
+    color: #eee;
+}
+
 #banner_container {
-    margin-bottom: 385px;
+    margin-bottom: 0px;
 
 }
 #picture_div {
@@ -156,11 +168,20 @@ h5 {
 
 
 #doctor_container {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 #createADoc {
     margin-top: 0;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #eee;
 }
+
+/*.div_border{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #eee;
+}*/
 
 #sub_footer_HP {
     color: #eee;
