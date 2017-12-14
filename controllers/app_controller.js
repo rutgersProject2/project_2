@@ -29,6 +29,8 @@ router.get("/profile/id:", function(req,res){
 
 
 router.post("/api/doctors", function(req, res) {
+    
+  
     model.createDoc([
       
       req.body.docFirstName,
