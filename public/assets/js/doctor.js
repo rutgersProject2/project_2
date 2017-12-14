@@ -1,5 +1,7 @@
 //On click event for adding new doctor
 
+
+
 $("#dr_create_btn").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -26,12 +28,10 @@ $("#dr_create_btn").on("click", function (event) {
     }).done(
         function (response) {
             console.log("You've been added to the Doctor network");
-            console.log(response);
+            console.log(window.location);
+            
         })
         .fail(function(){
         console.log("failed")
         })
-        .always(function(){
-        console.log("attempt")
-        });
 });

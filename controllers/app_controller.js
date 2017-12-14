@@ -11,18 +11,22 @@ router.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
-
-// Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-
-  model.all(function(data) {
-    var hbsObject = {
-      burgers: data
-    };
-    //console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+router.get("/provider", function(req,res){
+res.sendFile(path.join(__dirname, "../public/doctor.html"))
 });
+
+router.get("/user", function(req,res){
+  res.sendFile(path.join(__dirname, "../public/patient_login.html"))
+  });
+//render doctor profile
+router.get("/profile/id:", function(req,res){
+  var docObject = {
+    doctor: data
+  }
+  res.render("doctor_profile", )
+});
+
+
 
 router.post("/api/doctors", function(req, res) {
     model.createDoc([
@@ -41,7 +45,8 @@ router.post("/api/doctors", function(req, res) {
 
 
     ], function(result) {
-      console.log(result);
+    
+      
       // Send back the ID 
       // var test = {
       //   'First_Name': fname,
@@ -57,8 +62,8 @@ router.post("/api/doctors", function(req, res) {
       //   'Zip_Code': Zip_Code
       
       // }
-      // res.json(test);
-      
+      console.log(res.json(true));
+     
     });
   
   });
