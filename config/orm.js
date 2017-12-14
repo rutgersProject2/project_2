@@ -1,7 +1,7 @@
 var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
-  
+
   var arr = [];
 
   for (var i = 0; i < num; i++) {
@@ -40,21 +40,38 @@ function objToSql(ob) {
 var orm = {
 
 
-   //Calling the stored procedure and pass it from the app.js file.  
-  all: function(stored_proc, cb) {
+  //Calling the stored procedure and pass it from the app.js file.  
+  all: function (stored_proc, cb) {
     var queryString = "call " + stored_proc + ";";
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
       cb(result);
+
+    });
+  },
+
+
+
+  createDoc: function (stored_proc, vals, cb) {
+    var queryString = "call " + stored_proc;
+
+    queryString += " (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
+
+
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
       
+      cb(result);
     });
   },
-  
 
-
-  createDoc: function(stored_proc, vals, cb) {
+  createPatient: function (stored_proc, vals, cb) {
     var queryString = "call " + stored_proc;
 
     queryString += " (";
@@ -63,27 +80,32 @@ var orm = {
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    connection.query(queryString, vals, function (err, result) {
       if (err) {
         throw err;
       }
-
+      
       cb(result);
     });
   },
 
-  createPatient: function(stored_proc, vals, cb) {
-    var queryString = "call " + stored_proc;
 
-    queryString += " (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
+  update: function (view, objColVals, condition, cb) {
+    var queryString = "UPDATE " + view;
+
+    queryString += " SET ";
+    queryString += objToSql(objColVals);
+    queryString += " WHERE ";
+    queryString += condition;
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    connection.query(queryString, function (err, result) {
+
       if (err) {
+
         throw err;
+
       }
 
       cb(result);
@@ -91,52 +113,29 @@ var orm = {
   },
 
 
-update: function(view, objColVals, condition, cb) {
-var queryString = "UPDATE " + view;
 
-queryString += " SET ";
-queryString += objToSql(objColVals);
-queryString += " WHERE ";
-queryString += condition;
+  searchPatient: function (stored_proc, vals, cb) {
 
-console.log(queryString);
-
-connection.query(queryString, function(err, result) {
-
-  if (err) {
-
-    throw err;
-
-  }
-
-      cb(result);
-    });
-  }, 
-  
-  
-  
-  searchPatient: function(stored_proc, vals, cb) {
-    
     console.log("ORM.js " + vals);
-    
+
 
     var queryString = "call " + stored_proc;
-    
-        queryString += " (";
-        queryString += vals;
-        queryString += ") ";
-        
-        console.log(queryString);
-        
-            connection.query(queryString, vals, function(err, result) {
-              if (err) {
-                throw err;
-              }
-              console.log(vals);
-              cb(result);
 
-            });
-          }
+    queryString += " (";
+    queryString += vals;
+    queryString += ") ";
+
+    console.log(queryString);
+
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      console.log(vals);
+      cb(result);
+
+    });
+  }
 
 };
 

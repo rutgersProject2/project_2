@@ -11,15 +11,19 @@
     <!-- Javascript -->
     <!-- <script src="/assets/js/app.js"></script> -->
     <!--Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
     <!--Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/a7aa792cdb.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Leckerli+One|Montserrat|Yellowtail" rel="stylesheet">
 </head>
+
 
 <body class="login-body">
     <!-- <div class="background-wrap"> -->
@@ -37,10 +41,10 @@
             <div id="nav" class="col-lg-5 text-end">
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="doctor.html">Providers</a>
+                        <a class="nav-link" id="provider">Providers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home</a>
+                        <a class="nav-link" id="user">Home</a>
                     </li>
                 </ul>
             </div>
@@ -50,12 +54,30 @@
     <div class="container" id="log-in-user">
         <div class="row">
             <div class="col-lg-3"></div>
+
             <div class="col-lg-6">
                 <div class="card text-center">
                     <div class="card-header">
                         Log in to Access your Medical Records
                     </div>
                     <div class="card-body">
+
+                        <h4 class="card-title">Enter your user info</h4>
+                        <p class="card-text">
+                            <input id="emailBox" type="email" placeholder="Email">
+                            <input id="passwordBox" type="password" placeholder="Password">
+                        </p>
+                        <!-- <a class="btn btn-dark" id="btnLogin">Log In</a> -->
+                        <button type="button" id="btnLogin" class="btn btn-success">Log In</button>
+                        <!-- <button type="button" id="btnRedirect" class="btn btn-secondary">(patient.html)</button> -->
+                    </div>
+                    <div class="card-footer text-muted">
+                        Not with Test yet?
+                        <p>
+                            <button type="button" id="btnSignUp" class="btn btn-secondary">Get started today</button>
+                        </p>
+                    </div>
+
                         <h4 class="card-title">Enter Your Credentials</h4>
                         <p class="card-text">
                             <input id="emailBox" type="email" placeholder="Email">
@@ -67,15 +89,18 @@
                         <button type="button" id="btnLogin" class="button">Log In</button>
                         <!-- <button type="button" id="btnRedirect" class="btn btn-secondary">(patient.html)</button> -->
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+
     <!-- footer -->
     <div id="footer_login" class="col-lg-12 text-center">
         Verify &copy; 2017
     </div>
-    <script type="text/javascript" src="/assets/js/doctor.js"></script>
+     <script type="text/javascript" src="/assets/js/logic.js"></script>
 </body>
 
 </html>
+

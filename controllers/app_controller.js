@@ -3,49 +3,40 @@ var express = require("express");
 var router = express.Router();
 var path = require("path");
 
-// Import the model (burger.js) to use its database functions.
-var burger = require("../models/app.js");
+// Import the model (app.js) to use its database functions.
+var model = require("../models/app.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
-// Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-
-  burger.all(function(data) {
-    var hbsObject = {
-      burgers: data
-    };
-    //console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+router.get("/provider", function(req,res){
+res.sendFile(path.join(__dirname, "../public/doctor.html"))
 });
 
+router.get("/user", function(req,res){
+  res.sendFile(path.join(__dirname, "../public/patient_login.html"))
+  });
+//render doctor profile
+router.get("/profile/id:", function(req,res){
+  var docObject = {
+    doctor: data
+  }
+  res.render("doctor_profile", )
+});
+
+
+
 router.post("/api/doctors", function(req, res) {
-
-
-    var fname = req.body.First_Name;
-    var Last_Name = req.body.Last_Name;
-    var Practice_Number = req.body.Practice_Number;
-    var Specialty = req.body.Specialty;
-    var Email = req.body.Email;
-    var Phone = req.body.Phone;
-    var Street_Address = req.body.Street_Address;
-    var Apartment_Num = req.body.Apartment_Num;
-    var City = req.body.City;
-    var State = req.body.State;
-    var Zip_Code = req.body.Zip_Code;
-
-    burger.createDoc([
+    model.createDoc([
       
-      req.body.First_Name,
-      req.body.Last_Name,
-      req.body.Practice_Number,
-      req.body.Specialty,
-      req.body.Email,
-      req.body.Phone,
+      req.body.docFirstName,
+      req.body.docLastName,
+      req.body.docPractice,
+      req.body.docSpecialty,
+      req.body.docEmail,
+      req.body.docPhone,
       req.body.Street_Address,
       req.body.Apartment_Num,
       req.body.City,
@@ -54,41 +45,33 @@ router.post("/api/doctors", function(req, res) {
 
 
     ], function(result) {
-
+    
+      
       // Send back the ID 
-      var test = {
-        'First_Name': fname,
-        'Last_Name': Last_Name,
-        'Practice_Number': Practice_Number,
-        'Specialty': Specialty,
-        'Email': Email,
-        'Phone': Phone,
-        'Street_Address': Street_Address, 
-        'Apartment_Num': Apartment_Num,
-        'City': City,
-        'State': State, 
-        'Zip_Code': Zip_Code
+      // var test = {
+      //   'First_Name': fname,
+      //   'Last_Name': Last_Name,
+      //   'Practice_Number': Practice_Number,
+      //   'Specialty': Specialty,
+      //   'Email': Email,
+      //   'Phone': Phone,
+      //   'Street_Address': Street_Address, 
+      //   'Apartment_Num': Apartment_Num,
+      //   'City': City,
+      //   'State': State, 
+      //   'Zip_Code': Zip_Code
       
-      }
-      res.json(test);
-      
+      // }
+      console.log(res.json(true));
+     
     });
   
   });
 
 
   router.post("/api/patient", function(req, res) {
-        var fname = req.body.First_Name;
-        var Last_Name = req.body.Last_Name;
-        var DOB = req.body.DOB;
-        var doctorsID = req.body.doctorsID;
-        var Street_Address = req.body.Street_Address;
-        var Apartment_Num = req.body.Apartment_Num;
-        var City = req.body.City;
-        var State = req.body.State;
-        var Zip_Code = req.body.Zip_Code;
-    
-        burger.createPatient([
+
+          modal.createPatient([
           
           req.body.First_Name,
           req.body.Last_Name,
@@ -130,7 +113,7 @@ router.post("/api/doctors", function(req, res) {
     
     console.log("condition", condition);
 
-    burger.update({
+    model.update({
       First_Name: req.body.First_Name,
       Last_Name: req.body.Last_Name,
       DOB: req.body.DOB,
@@ -191,7 +174,7 @@ router.post("/api/doctors", function(req, res) {
 
   console.log("Controller: " + condition);
 
-      burger.searchPatient(condition, function(data) {
+      modal.searchPatient(condition, function(data) {
         var hbsObject = {
           burgers: data
         };
