@@ -50,11 +50,11 @@
                         <p>
                             <div class="form-group">
                                 <label for="username">Username:</label>
-                                <input class="form-control" id="doc_userName" type="number">
+                                <input class="form-control" id="doc_userName" type="text">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password:</label>
-                                <input class="form-control" id="doc_password" type="number">
+                                <input class="form-control" id="doc_password" type="password">
                             </div>
                         </p>
                     </div>
@@ -65,7 +65,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container" id="doctor_container">
             <!-- Page banner -->
             <div class="jumbotron jumbotron-fluid">
@@ -76,64 +75,64 @@
             </div>
             <div class="banner" id="doctor_banner">
             </div>
-        <div class="row" id="createADoc">
-            <form>
-                <div class="form-group">
-                    <label for="doc_firName">First Name</label>
-                    <input type="name" class="form-control" id="doc_firName" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="doc_lstName">Last Name</label>
-                    <input type="name" class="form-control" id="doc_lstName" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="doc_practice">Practice Number</label>
-                    <input type="number" class="form-control" id="doc_practice" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="doc_specialty">Speacialty</label>
-                    <input type="name" class="form-control" id="doc_specialty" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="doc_email">Email</label>
-                    <input type="email" class="form-control" id="doc_email" aria-describedby="emailHelp" placeholder="">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                                  <div class="form-group">
+            <div class="row" id="createADoc">
+                <form>
+                    <div class="form-group">
+                        <label for="doc_firName">First Name</label>
+                        <input type="text" class="form-control" id="doc_firName" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="doc_lstName">Last Name</label>
+                        <input type="text" class="form-control" id="doc_lstName" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="doc_practice">Practice Number</label>
+                        <input type="text" class="form-control" id="doc_practice" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="doc_specialty">Speacialty</label>
+                        <input type="name" class="form-control" id="doc_specialty" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="doc_email">Email</label>
+                        <input type="email" class="form-control" id="doc_email" aria-describedby="emailHelp" placeholder="">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
                         <label for="Street_Address">Address 1</label>
-                        <input type="email" class="form-control" id="Street_Address" placeholder="">
+                        <input type="text" class="form-control" id="Street_Address" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="Apartment_Num">Address 2</label>
-                        <input type="email" class="form-control" id="Apartment_Num" placeholder="Apt, Floor, Suite">
+                        <input type="text" class="form-control" id="Apartment_Num" placeholder="Apt, Floor, Suite">
                     </div>
                     <div class="form-group">
                         <label for="City">City</label>
-                        <input type="email" class="form-control" id="City" placeholder="">
+                        <input type="text" class="form-control" id="City" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="State">State</label>
-                        <input type="email" class="form-control" id="State" placeholder="">
+                        <input type="text" class="form-control" id="State" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="Zip_Code">Zipcode</label>
-                        <input type="email" class="form-control" id="Zip_Code" placeholder="">
+                        <input type="text" class="form-control" id="Zip_Code" placeholder="">
                     </div>
-                <div class="form-group">
-                    <label for="doc_phone">Phone Number</label>
-                    <input type="password" class="form-control" id="doc_phone" placeholder="">
-                </div>
-                <button id="dr_create_btn" class="btn btn-primary">Submit</button>
-            </form>
+                    <div class="form-group">
+                        <label for="doc_phone">Phone Number</label>
+                        <input type="text" class="form-control" id="doc_phone" placeholder="">
+                    </div>
+                    <button id="dr_create_btn" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <!-- Sub footer -->
-    <div id="sub_footer" class="col-lg-12 text-center">
-        <h4>Help</h4>
-        <a class="nav-link" href="doctor.html">Providers</a>
-        <a class="nav-link" href="patient_login.html">View your medical records </a>
-    </div>
-    <script type="text/javascript" src="/assets/js/doctor.js"></script>
+        <!-- Sub footer -->
+        <div id="sub_footer" class="col-lg-12 text-center">
+            <h4>Help</h4>
+            <a class="nav-link" href="doctor.html">Providers</a>
+            <a class="nav-link" href="patient_login.html">View your medical records </a>
+        </div>
+        <script type="text/javascript" src="/assets/js/doctor.js"></script>
 </body>
 
 </html>
