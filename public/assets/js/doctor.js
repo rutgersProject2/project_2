@@ -5,10 +5,10 @@ $("#dr_create_btn").on("click", function (event) {
     event.preventDefault();
 
     var newDoctor = {
-        firstName: $("#doc_firName").val().trim(),
-        lastName: $("#doc_lstName").val().trim(),
-        practice: $("#doc_practice").val().trim(),
-        specialty: $("#doc_specialty").val().trim(),
+        docFirstName: $("#doc_firName").val().trim(),
+        docLastName: $("#doc_lstName").val().trim(),
+        docPractice: $("#doc_practice").val().trim(),
+        docSpecialty: $("#doc_specialty").val().trim(),
         docEmail: $("#doc_email").val().trim(),
         docPhone: $("#doc_phone").val().trim(),
         Street_Address: $("#Street_Address").val().trim(),
@@ -17,18 +17,21 @@ $("#dr_create_btn").on("click", function (event) {
         State: $("#State").val().trim(),
         Zip_Code: $("#Zip_Code").val().trim()
     };
-    console.log(newDoctor)
 
 
     // Send the POST request.
     $.ajax("/api/doctors", {
         type: "POST",
         data: newDoctor
-    }).then(
-        function () {
+    }).done(
+        function (response) {
             console.log("You've been added to the Doctor network");
-
-            // location.reload();
-        }
-        );
+            console.log(response);
+        })
+        .fail(function(){
+        console.log("failed")
+        })
+        .always(function(){
+        console.log("attempt")
+        });
 });

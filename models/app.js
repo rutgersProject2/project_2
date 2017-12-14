@@ -10,8 +10,8 @@ var burger = {
   
   // The variables cols and vals are arrays.
 
-  createDoc: function(cols, vals, cb) {
-    orm.createDoc("new_doctor", cols, vals, function(res) {
+  createDoc: function(vals, cb) {
+    orm.createDoc("new_doctor", vals, function(res) {
       cb(res);
     });
   },
