@@ -23,7 +23,7 @@ router.get("/profile/id:", function(req,res){
   var docObject = {
     doctor: data
   }
-  res.render("doctor_profile", )
+  res.render("doctor_profile", docObject);
 });
 
 
