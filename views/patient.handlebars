@@ -11,117 +11,42 @@
         <div id="nav" class="col-lg-5 text-end">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="/provider">Providers</a>
+                    <a class="nav-link" href="doctor.html">Providers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user">Patients </a>
+                    <a class="nav-link" href="patient_login.html">Patients </a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
 <hr>
-<!-- Adding Patient Modal -->
-<div class="modal" id="patient_addModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add a patient</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="container" id="patient_profile_container">
+    <div class="row">
+        <div id="patient_profile" class="col-lg-12 text-left">
+            <div>
+                <div class="card">
+                    <div class="card-header">
+                        Your Profile
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">*Display the Patient's Medical record Here* READ</h4>
+                        <p id="event" class="card-text"></p>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="patient_firstName">First Name:</label>
-                            <input class="form-control" id="patient_firstName" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="patient_lstName">Last Name:</label>
-                            <input class="form-control" id="patient_lstName" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="patient_birth">Date of Birth:</label>
-                            <input placeholder="EX: 1999/12/30" class="form-control" id="patient_birth" type="text">
-                        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="add_patient" class="col-lg-12 text-left">
+            <div>
+                <div class="card">
+                    <div class="card-header">
+                        Update this Patient's Record
                     </div>
-                    <div class="form-group">
-                        <label for="patient_address">Address</label>
-                        <input type="text" class="form-control" id="patient_address" placeholder="1234 Main St">
-                    </div>
-                    <div class="form-group">
-                        <label for="patient_address_2">Address 2</label>
-                        <input type="text" class="form-control" id="patient_address_2" placeholder="Apartment, studio, or floor">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="patient_city">City</label>
-                            <input type="text" class="form-control" id="patient_city">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="patient_state">State</label>
-                            <select id="patient_state" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>AL</option>
-                                <option>AK</option>
-                                <option>AZ</option>
-                                <option>AR</option>
-                                <option>CA</option>
-                                <option>CO</option>
-                                <option>CT</option>
-                                <option>DE</option>
-                                <option>Fl</option>
-                                <option>GA</option>
-                                <option>HI</option>
-                                <option>ID</option>
-                                <option>IL</option>
-                                <option>IN</option>
-                                <option>IA</option>
-                                <option>KS</option>
-                                <option>KY</option>
-                                <option>LA</option>
-                                <option>ME</option>
-                                <option>MD</option>
-                                <option>MA</option>
-                                <option>MI</option>
-                                <option>MN</option>
-                                <option>MS</option>
-                                <option>MO</option>
-                                <option>MT</option>
-                                <option>NE</option>
-                                <option>NV</option>
-                                <option>NH</option>
-                                <option>NJ</option>
-                                <option>NM</option>
-                                <option>NY</option>
-                                <option>NC</option>
-                                <option>ND</option>
-                                <option>OH</option>
-                                <option>OK</option>
-                                <option>OR</option>
-                                <option>PA</option>
-                                <option>RI</option>
-                                <option>SC</option>
-                                <option>SD</option>
-                                <option>TN</option>
-                                <option>TX</option>
-                                <option>UT</option>
-                                <option>VT</option>
-                                <option>VA</option>
-                                <option>WA</option>
-                                <option>WV</option>
-                                <option>WI</option>
-                                <option>WY</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-2">
-                            <label for="patient_zip">Zip</label>
-                            <input type="text" class="form-control" id="patient_zip">
-                        </div>
+                    <div class="card-body" id="fix">
                         <form>
-                            <div class="form-group col-sm-12">
+                            <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <div class="diagnosis_type" id="postive">
@@ -584,20 +509,20 @@
                                     <div class="col-sm-3">
                                         <div class="form-check-pos" id="pid-pos">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" name="inetst_parasites" type="radio" value="positive">
+                                                <input class="form-check-input" name="pid" type="radio" value="positive">
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="form-check-neg" id="pid-neg">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" name="inetst_parasites" value="negative" type="radio" checked="checked">
+                                                <input class="form-check-input" name="pid" value="negative" type="radio" checked="checked">
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-sm-offset-6">
-                                        <div class="diagnosis_type" id="inetst_parasites">
-                                            <span>Intestinal Parasites</span>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="pid">
+                                            <span>PID</span>
                                         </div>
                                     </div>
                                 </div>
@@ -643,102 +568,25 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="parasites-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="inetst_parasites" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="parasites-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="inetst_parasites" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </form>
-                    </div>
-                </form>
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button id="save_patient_info" type="button" class="btn btn-dark">Save Info</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Searching Patient Record Modal -->
-<div class="modal" id="patient_searchModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Search for an existing record</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="search_patient_firstName">First Name:</label>
-                                <input class="form-control" id="search_patient_firstName" type="text">
-                            </div>
-                            <div class="form-group">
-                                <label for="search_patient_lstName">Last Name:</label>
-                                <input class="form-control" id="search_patient_lstName" type="text">
-                            </div>
-                            <div class="form-group">
-                                <label for="search_patient_dob">Date of Birth:</label>
-                                <input class="form-control" id="search_patient_dob" type="text">
-                            </div>
-                            <div class="form-group">
-                                <label for="search_patient_ID">Patient ID:</label>
-                                <input class="form-control" id="search_patient_ID" type="text">
-                            </div>
-                        </div>
-                    </form>
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button id="search_patient_info" type="button" class="btn btn-dark">Search</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container" id="doc_profile_container">
-    <div class="row">
-        <div id="doc_profile" class="col-lg-12 text-left">
-            <div>
-                <div class="card">
-                    <div class="card-header">
-                        Your Profile
-                    </div>
-                    <div class="box-body row" id="doc-box-body">
-                        <div class="col-lg-1"></div>
-                        <div class="col-lg-7">
-                            {{#each docProfile}}
-                            <P>NAME: {{d_fname}}{{d_lname}}</P>
-                            <p id="docID" value="{{doctorsID}}">ID: {{doctorsID}}</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>SPECIALTY: {{specialty}}</p>
-                            <p>PRACTICE NUMBER: {{practiceNum}}</p>
-                            {{/each}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12"></div>
-    </div>
-    <div class="row">
-        <div id="add_patient" class="col-lg-12 text-center">
-            <div>
-                <div class="card">
-                    <div class="card-header">
-                        Need to add a new patient?
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Simply fill out form</h4>
-                        <p id="event" class="card-text">
-                            <!-- trigger the modal -->
-                            <button type="button" id="patient_add_btn" class="btn btn-outline-dark" data-toggle="modal" data-target="#patient_addModal">Add new patient</button>
-                            <button type="button" id="search_patient" class="btn btn-outline-dark" data-toggle="modal" data-target="#patient_searchModal">Search for patient</button>
-                        </p>
                     </div>
                 </div>
             </div>

@@ -20,16 +20,18 @@ router.get("/user", function (req, res) {
   res.sendFile(path.join(__dirname, "../public/patient_login.html"))
 });
 
-router.get("/doc_patient_view", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/doc_patient_view.html"))
+router.get("/patient/records/:id", function (req, res) {
+  model.searchPatient([
+    req.params.id
+  ], function (data) {
+    res.render("patient", { patientInfo: data });
+  })
 });
 
 router.get("/provider/:id", function (req, res) {
   model.findDoc([
     req.params.id,
   ], function (data) {
-    console.log(data);
-
     res.render("index", { docProfile: data })
   })
 
@@ -60,7 +62,6 @@ router.post("/api/doctors", function (req, res) {
 
 });
 
-
 router.post("/api/patient", function (req, res) {
 
   model.createPatient([
@@ -75,31 +76,13 @@ router.post("/api/patient", function (req, res) {
     req.body.State,
     req.body.Zip_Code
 
-
   ], function (result) {
 
-    // Send back the ID 
-    // var test = {
-    //   'First_Name': fname,
-    //   'Last_Name': Last_Name,
-    //   'DOB': DOB,
-    //   'doctorsID': doctorsID,
-    //   'Street_Address': Street_Address,
-    //   'Apartment_Num': Apartment_Num,
-    //   'City': City,
-    //   'State': State,
-    //   'Zip_Code': Zip_Code
-
-    // }
-
-    console.log(result)
+    res.json(result)
 
   });
 
 });
-
-
-
 
 router.put("/api/patient/:id", function (req, res) {
   var condition = "id = " + req.params.id;
@@ -153,30 +136,30 @@ router.put("/api/patient/:id", function (req, res) {
 
 
 
-router.get('/api/:last_name/:id', function (req, res) {
+// router.get('/api/:last_name/:id', function (req, res) {
 
 
-  var condition = ["'" + req.params.last_name + "'", "'" + req.params.id + "'"];
-
-
-
-
-  //= [req.params.last_name, req.params.id];
+//   var condition = ["'" + req.params.last_name + "'", "'" + req.params.id + "'"];
 
 
 
-  console.log("Controller: " + condition);
 
-  model.searchPatient(condition, function (data) {
-    var hbsObject = {
-      burgers: data
-    };
-    console.log(hbsObject);
+//   //= [req.params.last_name, req.params.id];
 
-    res.render("index", hbsObject);
 
-  });
-});
+
+//   console.log("Controller: " + condition);
+
+//   model.searchPatient(condition, function (data) {
+//     var hbsObject = {
+//       burgers: data
+//     };
+//     console.log(hbsObject);
+
+//     res.render("index", hbsObject);
+
+//   });
+// });
 
 
 // Export routes for server.js to use.

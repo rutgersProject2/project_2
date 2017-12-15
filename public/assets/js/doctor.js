@@ -27,7 +27,7 @@ $(function () {
             function (response) {
                 console.log("You've been added to the Doctor network");
                 window.location.replace(window.location.origin + "/provider/" + response.id);
-                
+
             })
     });
 
@@ -36,36 +36,26 @@ $(function () {
         event.preventDefault();
 
         var newPatient = {
-            patientFirName: $("#patient_firstName").val().trim(),
-            patient_lstName: $("#patient_lstName").val().trim(),
-            patient_birth: $("#patient_birth").val().trim(),
-            patient_address: $("#patient_address").val().trim(),
-            patient_address_2: $("#patient_address_2").val().trim(),
-            patient_city: $("#patient_city").val().trim(),
-            patient_state: $("#patient_state").val().trim(),
-            patient_zip: $("#patient_zip").val().trim()
+            First_Name: $("#patient_firstName").val().trim(),
+            Last_Name: $("#patient_lstName").val().trim(),
+            DOB: $("#patient_birth").val().trim(),
+            doctorsID: $("#docID").attr("value"),
+            Street_Address: $("#patient_address").val().trim(),
+            Apartment_Num: $("#patient_address_2").val().trim(),
+            City: $("#patient_city").val().trim(),
+            State: $("#patient_state").val().trim(),
+            Zip_Code: $("#patient_zip").val().trim()
         };
-        console.log(newPatient);
-
-        $.ajax("/api/patient", {
-            type: "POST",
-            data: newPatient
-        }).done(
-            function (response) {
-                console.log(response)
-                console.log("You've been added to the Patient network");
-                console.log(window.location);
-
-            })
-            .fail(function () {
-                console.log("failed")
-            })
-    });
-
-    $("#update_patient_info").on("click", function (event) {
-        event.preventDefault();
-
         var newRecord = {
+            First_Name: $("#patient_firstName").val().trim(),
+            Last_Name: $("#patient_lstName").val().trim(),
+            DOB: $("#patient_birth").val().trim(),
+            doctorsID: $("#docID").attr("value"),
+            Street_Address: $("#patient_address").val().trim(),
+            Apartment_Num: $("#patient_address_2").val().trim(),
+            City: $("#patient_city").val().trim(),
+            State: $("#patient_state").val().trim(),
+            Zip_Code: $("#patient_zip").val().trim(),
             hepatitis: $("input[name='hepatitis']:checked").val(),
             hsv1: $("input[name='hsv1']:checked").val(),
             hsv2: $("input[name='hsv2']:checked").val(),
@@ -90,10 +80,33 @@ $(function () {
             inetst_parasites: $("input[name='inetst_parasites']:checked").val(),
             mycoplasm: $("input[name='mycoplasm']:checked").val(),
             lgv: $("input[name='lgv']:checked").val(),
-        }
-        console.log(newRecord)
+        };
 
-        // AJAX CALL
+        $.ajax("/api/patient", {
+            type: "POST",
+            data: newPatient
+        }).done(
+            function (response) {
+                console.log(response)
+                console.log("You've been added to the Patient network");
+                var patientID = response[0][0][Object.keys(response[0][0])[0]];
+                console.log(patientID)
+                // window.location.replace(window.location.origin + "/patient/records/" + response[0][0].LAST_INSERTED_ID);
+
+                $.ajax("/api/patient/" + patientID, {
+                    type: "PUT",
+                    data: newRecord
+                }).done(
+                    function (newRes) {
+                        console.log("Patient Record Added")
+                        console.log(newRes);
+                    }
+                    )
+
+            })
+            .fail(function () {
+                console.log("failed")
+            })
     })
 
     $("#search_patient_info").on("click", function (event) {
