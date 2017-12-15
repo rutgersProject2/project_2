@@ -24,9 +24,11 @@ $(function () {
             type: "POST",
             data: newDoctor
         }).then(
-            function () {
+            function (response) {
                 console.log("You've been added to the Doctor network");
+                console.log(window.location.origin + "/provider/" + response.id);
                 // location.reload();
+                console.log(response.id);
             })
     });
 
