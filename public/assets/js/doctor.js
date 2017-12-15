@@ -51,6 +51,7 @@ $("#save_patient_info").on("click", function(event) {
     console.log(newPatient);
 
     // Send the POST request -- new patient
+    //NOT WORKING YET
     $.ajax("/api/patient", {
             type: "POST",
             data: newPatient
@@ -69,29 +70,46 @@ $("#update_patient_info").on("click", function(event) {
     event.preventDefault();
 
     var newRecord = {
-        hepatitis: $("#patient_firstName").val().trim(),
-        hsv1: $("#patient_firstName").val().trim(),
-        hsv2: $("#patient_firstName").val().trim(),
-        hiv: $("#patient_firstName").val().trim(),
-        aids: $("#patient_firstName").val().trim(),
-        hltv: $("#patient_firstName").val().trim(),
-        hpv: $("#patient_firstName").val().trim(),
-        molluscum_contag: $("#patient_firstName").val().trim(),
-        zika: $("#patient_firstName").val().trim(),
-        chlamydia: $("#patient_firstName").val().trim(),
-        gonorrhea: $("#patient_firstName").val().trim(),
-        syphilis: $("#patient_firstName").val().trim(),
-        trich: $("#patient_firstName").val().trim(),
-        crabs: $("#patient_firstName").val().trim(),
-        scabies: $("#patient_firstName").val().trim(),
-        bv_yeast: $("#patient_firstName").val().trim(),
-        chancroid: $("#patient_firstName").val().trim(),
-        donovanosis: $("#patient_firstName").val().trim(),
-        genital_warts: $("#patient_firstName").val().trim(),
-        pid: $("#patient_firstName").val().trim(),
-        ngu: $("#patient_firstName").val().trim(),
-        inetst_parasites: $("#patient_firstName").val().trim(),
-        mycoplasm: $("#patient_firstName").val().trim(),
-        lgv: $("#patient_firstName").val().trim(),
+        hepatitis: $("input[name='hepatitis']:checked").val(),
+        hsv1: $("input[name='hsv1']:checked").val(),
+        hsv2: $("input[name='hsv2']:checked").val(),
+        hiv: $("input[name='hiv']:checked").val(),
+        aids: $("input[name='aids']:checked").val(),
+        hltv: $("input[name='hltv']:checked").val(),
+        hpv: $("input[name='hpv']:checked").val(),
+        molluscum_contag: $("input[name='molluscum_contag']:checked").val(),
+        zika: $("input[name='zika']:checked").val(),
+        chlamydia: $("input[name='chlamydia']:checked").val(),
+        gonorrhea: $("input[name='gonorrhea']:checked").val(),
+        syphilis: $("input[name='syphilis']:checked").val(),
+        trich: $("input[name='trich']:checked").val(),
+        crabs: $("input[name='crabs']:checked").val(),
+        scabies: $("input[name='scabies']:checked").val(),
+        bv_yeast: $("input[name='bv_yeast']:checked").val(),
+        chancroid: $("input[name='chancroid']:checked").val(),
+        donovanosis: $("input[name='donovanosis']:checked").val(),
+        genital_warts: $("input[name='genital_warts']:checked").val(),
+        pid: $("input[name='pid']:checked").val(),
+        ngu: $("input[name='ngu']:checked").val(),
+        inetst_parasites: $("input[name='inetst_parasites']:checked").val(),
+        mycoplasm: $("input[name='mycoplasm']:checked").val(),
+        lgv: $("input[name='lgv']:checked").val(),
     }
+    console.log(newRecord)
+
+    // AJAX CALL
+})
+
+$("#search_patient_info").on("click", function(event){
+    event.preventDefault();
+
+    var searchedPatient = {
+        search_PN: $("#search_patient_firstName").val().trim(), 
+        search_PLN: $("#search_patient_lstName").val().trim(),
+        search_DOB: $("#search_patient_dob").val().trim(),
+        search_PID: $("#search_patient_ID").val().trim()
+    }
+    console.log(searchedPatient);
+
+    // AJAX CALL
 })
