@@ -98,7 +98,7 @@ router.put("/api/patient/:id", function (req, res) {
     City: req.body.City,
     State: req.body.State,
     Zip_Code: req.body.Zip_Code,
-    diagDate: req.body.Diagnosis_Date,
+    Diagnosis_Date: req.body.Diagnosis_Date,
     hepatitis: req.body.hepatitis,
     hsv1: req.body.hsv1,
     hsv2: req.body.hsv2,
