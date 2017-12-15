@@ -71,6 +71,8 @@ router.post("/api/doctors", function(req, res) {
       
       // }
       // console.log(res.json(true));
+      docId = result[0][0].doctorsID;
+      res.json({ id: docId});
       console.log(result[0][0].doctorsID);
 
     });
