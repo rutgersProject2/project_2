@@ -427,7 +427,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'chris','\Ñ<\éxÁ‡\nô†©o\ÏhÅšú\ã','¤\åÆ•\éž÷h\Í\Ý¶­¬\Ìi\×\"'),(2,'seonaid','f”Y|ðd\Ý{¦0\Ë³y\äÀ','–Y^F‡ö~¸+öú>\Ü>\Ã>gž¼'),(3,'aaa','\0s€6\íþtO¨¬ S*\ï–\0',']\"xÇ¥yhw*B\ä\×Æ¢»„\ÕL'),(4,'asfas','C´¬’š\×h«c‰~Á\ZÏ¤È³\É','/‘>ƒwan\Þv1©S>D\'\ç$\Ü');
+INSERT INTO `users` VALUES (1,'chris','\Ã‘<\Ã©xÃÂ‡\nÃ´Â†Â©o\ÃhÂÃ…ÂšÃº\Ã£','Â¤\Ã¥Ã†Â•\Ã©ÂžÃ·h\Ã\ÃÂ¶Â­Â¬\ÃŒi\Ã—\"'),(2,'seonaid','fÂ”Y|Ã°dÂ\Ã{Â¦0Â\Ã‹Â³y\Ã¤Ã€','Â–Y^FÂ‡Ã¶~Â¸+Ã¶Ãº>\Ãœ>\Ãƒ>gÂžÂ¼'),(3,'aaa','\0sÂ€6\Ã­Ã¾tOÂ¨Â¬ S*Â\Ã¯Â–\0',']\"ÂxÃ‡Â¥yhw*B\Ã¤\Ã—Ã†Â¢Â»Â„\Ã•L'),(4,'asfas','CÂÂ´Â¬Â’Âš\Ã—hÂ«cÂ‰~Ã\ZÃÂ¤ÃˆÂ³\Ã‰','/Â‘>Âƒwan\Ãžv1Â©S>D\'\Ã§$\Ãœ');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -528,7 +528,7 @@ BEGIN
         
         
         
-		GRANT CREATE USER, SELECT, INSERT ON dbo TO name@'localhost';
+		GRANT CREATE USER, SELECT, INSERT, UPDATE ON dbo TO name@'localhost';
         
         
         FLUSH PRIVILEGES;
