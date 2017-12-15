@@ -70,8 +70,8 @@ router.post("/api/doctors", function(req, res) {
       //   'Zip_Code': Zip_Code
       
       // }
-      console.log(res.json(true));
-      console.log(result[0].doctorsID);
+      // console.log(res.json(true));
+      console.log(result[0][0].doctorsID);
 
     });
   
