@@ -8,7 +8,12 @@ var model = require("../models/app.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/home.html"));
+
+  model.all(function(data){
+    console.log("here")
+  })
+
+  //res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
 router.get("/provider", function(req,res){
@@ -29,10 +34,8 @@ router.get("/profile/id:", function(req,res){
 
 
 router.post("/api/doctors", function(req, res) {
-    
-  
+
     model.createDoc([
-      
       req.body.docFirstName,
       req.body.docLastName,
       req.body.docPractice,
@@ -45,8 +48,8 @@ router.post("/api/doctors", function(req, res) {
       req.body.State,
       req.body.Zip_Code
 
-
-    ], function(result) {
+  ], 
+    function(result) {
     
       
       // Send back the ID 
@@ -65,7 +68,8 @@ router.post("/api/doctors", function(req, res) {
       
       // }
       console.log(res.json(true));
-     
+      console.log(result[0].doctorsID);
+
     });
   
   });
@@ -73,7 +77,7 @@ router.post("/api/doctors", function(req, res) {
 
   router.post("/api/patient", function(req, res) {
 
-          modal.createPatient([
+    model.createPatient([
           
           req.body.First_Name,
           req.body.Last_Name,
