@@ -26,8 +26,8 @@ $("#dr_create_btn").on("click", function(event) {
         }).done(
             function(response) {
                 console.log("You've been added to the Doctor network");
-                console.log(window.location);
-
+                console.log(response);
+                console.log(window.location.origin + "/provider/" + response);
             })
         .fail(function() {
             console.log("failed")

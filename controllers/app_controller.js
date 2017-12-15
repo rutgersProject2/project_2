@@ -72,7 +72,8 @@ router.post("/api/doctors", function (req, res) {
     //   'Zip_Code': Zip_Code
 
     // }
-    console.log(res.json(true));
+    res.json(JSON.stringify(result[0][0].COMMIT))
+    // console.log(JSON.stringify(result[0][0].COMMIT));
 
   });
 
