@@ -26,9 +26,8 @@ $(function () {
         }).then(
             function (response) {
                 console.log("You've been added to the Doctor network");
-                console.log(window.location.origin + "/provider/" + response.id);
-                // location.reload();
-                console.log(response.id);
+                window.location.replace(window.location.origin + "/provider/" + response.id);
+                
             })
     });
 
@@ -48,13 +47,12 @@ $(function () {
         };
         console.log(newPatient);
 
-        // Send the POST request -- new patient
-        //NOT WORKING YET
         $.ajax("/api/patient", {
             type: "POST",
             data: newPatient
         }).done(
             function (response) {
+                console.log(response)
                 console.log("You've been added to the Patient network");
                 console.log(window.location);
 
@@ -110,5 +108,7 @@ $(function () {
         console.log(searchedPatient);
 
         // AJAX CALL
-    })
+    });
+
+
 });

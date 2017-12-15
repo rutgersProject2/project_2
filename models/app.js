@@ -7,7 +7,11 @@ var burger = {
       cb(res);
     });
   },
-
+  findDoc: function (docID, cb) {
+    orm.findDoc("doctors", docID, function (res) {
+      cb(res);
+    });
+  },
   createDoc: function (vals, cb) {
     orm.createDoc("new_doctor", vals, function (res) {
       cb(res);
