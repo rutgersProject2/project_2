@@ -39,8 +39,6 @@ function objToSql(ob) {
 
 var orm = {
 
-
-  //Calling the stored procedure and pass it from the app.js file.  
   all: function (stored_proc, cb) {
     var queryString = "call " + stored_proc + ";";
     connection.query(queryString, function (err, result) {
@@ -52,7 +50,16 @@ var orm = {
     });
   },
 
-
+  findDoc: function (tableName, docID, cb) {
+    var queryString = "SELECT * FROM " + tableName + " WHERE doctorsID = " + docID + ";"
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    })
+  },
 
   createDoc: function (stored_proc, vals, cb) {
     var queryString = "call " + stored_proc;
@@ -66,7 +73,7 @@ var orm = {
       if (err) {
         throw err;
       }
-      
+
       cb(result);
 
     });
@@ -85,11 +92,10 @@ var orm = {
       if (err) {
         throw err;
       }
-      
+
       cb(result);
     });
   },
-
 
   update: function (view, objColVals, condition, cb) {
     var queryString = "UPDATE " + view;
@@ -113,8 +119,6 @@ var orm = {
     });
   },
 
-
-
   searchPatient: function (stored_proc, vals, cb) {
 
     console.log("ORM.js " + vals);
@@ -137,7 +141,6 @@ var orm = {
 
     });
   }
-
 };
 
 module.exports = orm;
