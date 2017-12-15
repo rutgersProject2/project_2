@@ -8,30 +8,33 @@ var model = require("../models/app.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-
-  model.all(function(data){
-    console.log("here")
-  })
-
-  //res.sendFile(path.join(__dirname, "../public/home.html"));
+  
+  res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
-router.get("/provider", function(req,res){
-res.sendFile(path.join(__dirname, "../public/doctor.html"))
+router.get("/provider", function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/doctor.html"))
 });
 
-router.get("/user", function(req,res){
+router.get("/user", function (req, res) {
   res.sendFile(path.join(__dirname, "../public/patient_login.html"))
-  });
+});
+
+router.get("/doc_profile", function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/doctor_profile.html"))
+});
+
+router.get("/doc_patient_view", function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/doc_patient_view.html"))
+});
+
 //render doctor profile
-router.get("/profile/id:", function(req,res){
+router.get("/profile/id:", function (req, res) {
   var docObject = {
     doctor: data
   }
   res.render("doctor_profile", docObject);
 });
-
-
 
 router.post("/api/doctors", function(req, res) {
 
@@ -180,7 +183,7 @@ router.post("/api/doctors", function(req, res) {
 
   console.log("Controller: " + condition);
 
-      modal.searchPatient(condition, function(data) {
+      model.searchPatient(condition, function(data) {
         var hbsObject = {
           burgers: data
         };

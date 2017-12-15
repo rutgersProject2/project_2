@@ -59,33 +59,33 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <div class="diagnosis_type" id="hepatitis">
+                                        <div class="diagnosis_type" id="postive">
                                             <span>Positive</span>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
-                                        <div class="diagnosis_type" id="hepatitis">
+                                        <div class="diagnosis_type" id="negative">
                                             <span>Negative</span>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-sm-offset-6">
-                                        <div class="diagnosis_type" id="hepatitis">
+                                        <div class="diagnosis_type" id="diagnosis">
                                             <span>STD/STI</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <div class="form-check-pos" id="hepatitis-pos">
+                                        <div class="form-check-pos">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
+                                                <input class="form-check-input" name="hepatitis" id="hepatitis-pos" value="positive" type="radio">
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
-                                        <div class="form-check-neg" id="hepatitis-neg">
+                                        <div class="form-check-neg">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
+                                                <input class="form-check-input" name="hepatitis" id="hepatitis-neg" value="negative" type="radio" checked="checked">
                                             </label>
                                         </div>
                                     </div>
@@ -95,110 +95,509 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-check" id="hsv1">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Hsv1
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hsv1" id="hsv1-pos" value="positive" type="radio">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hsv1" id="hsv1-neg" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="hsv1">
+                                            <span>hsv1</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="hsv2">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Hsv2
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="hsv2-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hsv2" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="hsv2-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hsv2" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="hsv2">
+                                            <span>hsv2</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="hiv">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> HIV
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="hiv-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hiv" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="hiv-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hiv" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="hiv">
+                                            <span>HIV</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="aids">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> AIDS
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="aids-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="aids" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="aids-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="aids" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="aids">
+                                            <span>AIDS</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="hltv">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Hltv
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="hltv-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hltv" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="hltv-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hltv" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="hltv">
+                                            <span>hltv</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="hpv">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> HPV
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="hpv-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hpv" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="hpv-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="hpv" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="hpv">
+                                            <span>HPV</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="molluscum_contag">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Molluscum Contag
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="molluscum_contag-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="molluscum_contag" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="molluscum_contag-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="molluscum_contag" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="molluscum_contag">
+                                            <span>Molluscum_Contag</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="zika">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Zika
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="zika-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="zika" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="zika-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="zika" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="zika">
+                                            <span>Zika</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="chlamydia">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Chlamydia
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="chlamydia-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="chlamydia" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="chlamydia-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="chlamydia" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="chlamydia">
+                                            <span>Chlamydia</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="gonorrhea">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Gonorrhea
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="gonorrhea-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="gonorrhea" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="gonorrhea-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="gonorrhea" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="gonorrhea">
+                                            <span>Gonorrhea</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="syphilis">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Syphilis
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="syphilis-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="syphilis" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="syphilis-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input"  name="syphilis" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="syphilis">
+                                            <span>Syphilis</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="trich">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Trich
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="trich-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="trich" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="trich-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="trich" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="trich">
+                                            <span>Trich</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="crabs">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Crabs
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="crabs-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="crabs" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="crabs-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="crabs" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="crabs">
+                                            <span>Crabs</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="scabies">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Scabies
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="scabies-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="scabies" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="scabies-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="scabies" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="scabies">
+                                            <span>Scabies</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="bv_yeast">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> BV_yeast
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="bv_yeast-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="bv_yeast" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="bv_yeast-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="bv_yeast" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="bv_yeast">
+                                            <span>BV_Yeast</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="chancroid">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Chancroid
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="chancroid-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="chancroid" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="chancroid-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="chancroid" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="chancroid">
+                                            <span>Chancroid</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="donovanosis">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Donovanosis
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="donovanosis-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="donovanosis" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="donovanosis-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="donovanosis" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="donovanosis">
+                                            <span>Donovanosis</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="warts">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Genital Warts
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="warts-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="genital_warts" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="warts-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="genital_warts" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="warts">
+                                            <span>Genital_Warts</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="pid">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> PID
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="pid-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="pid" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="pid-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name"pid" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="pid">
+                                            <span>pid</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="ngu">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> NGU
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="ngu-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="ngu" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="ngu-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="ngu" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="ngu">
+                                            <span>ngu</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check" id="parasites">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox"> Intestinal Parasites
-                                    </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="pid-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="pid" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="pid-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="pid" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="pid">
+                                            <span>PID</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="mycoplasm-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="mycoplasm" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="mycoplasm-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="mycoplasm" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="mycoplasm">
+                                            <span>Mycoplasm</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="lgv-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="lgv" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="lgv-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="lgv" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="lgv">
+                                            <span>lgv</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-check-pos" id="parasites-pos">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="inetst_parasites" type="radio" value="positive">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check-neg" id="parasites-neg">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="inetst_parasites" value="negative" type="radio" checked="checked">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-6">
+                                        <div class="diagnosis_type" id="parasites">
+                                            <span>Intestinal_Parasites</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -206,7 +605,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="save_patient_info" type="button" class="btn btn-dark">Update Record</button>
+                <button id="update_patient_info" type="button" class="btn btn-dark">Update Record</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
@@ -227,27 +626,27 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div id="add_patient" class="col-lg-12 text-left">
-            <div>
-                <div class="card">
-                    <div class="card-header">
-                        Update this Patient's Record
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Simply fill out form yada yada</h4>
-                        <p id="event" class="card-text">
-                            <!-- trigger the modal -->
-                            <button type="button" id="patient_add_btn" class="btn btn-outline-dark" data-toggle="modal" data-target="#patient_record_modal">Add records to Patient</button>
-                        </p>
+        <div class="row">
+            <div id="add_patient" class="col-lg-12 text-left">
+                <div>
+                    <div class="card">
+                        <div class="card-header">
+                            Update this Patient's Record
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Simply fill out form yada yada</h4>
+                            <p id="event" class="card-text">
+                                <!-- trigger the modal -->
+                                <button type="button" id="patient_add_btn" class="btn btn-outline-dark" data-toggle="modal" data-target="#patient_record_modal">Add records to Patient</button>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- footer -->
-    <div id="footer_other" class="col-lg-12 text-center">
+    <div id="footer_login" class="col-lg-12 text-center">
         Verify &copy; 2017
     </div>
     </div>
