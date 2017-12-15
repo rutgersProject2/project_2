@@ -85,7 +85,7 @@ router.post("/api/patient", function (req, res) {
 });
 
 router.put("/api/patient/:id", function (req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = "id = " + req.params.id +";";
 
   console.log("condition", condition);
 
@@ -121,7 +121,7 @@ router.put("/api/patient/:id", function (req, res) {
     pid: req.body.pid,
     ngu: req.body.ngu,
     inetst_parasites: req.body.inetst_parasites,
-    mycoplasma: req.body.mycoplasma,
+    mycoplasma: req.body.mycoplasm,
     lgv: req.body.lgv
   }, condition, function (result) {
     if (result.changedRows == 0) {

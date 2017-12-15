@@ -78,10 +78,10 @@ $(function () {
             pid: $("input[name='pid']:checked").val(),
             ngu: $("input[name='ngu']:checked").val(),
             inetst_parasites: $("input[name='inetst_parasites']:checked").val(),
-            mycoplasm: $("input[name='mycoplasm']:checked").val(),
+            mycoplasm: $("input[name='Mycoplasm']:checked").val(),
             lgv: $("input[name='lgv']:checked").val(),
         };
-
+        console.log(newRecord)
         $.ajax("/api/patient", {
             type: "POST",
             data: newPatient
@@ -102,7 +102,6 @@ $(function () {
                         console.log(newRes);
                     }
                     )
-
             })
             .fail(function () {
                 console.log("failed")
