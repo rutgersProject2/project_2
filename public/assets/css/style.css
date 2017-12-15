@@ -18,6 +18,9 @@ body {
     background-color: #95cdd0;
 }
 
+#fix {
+    margin-bottom: 50px;
+}
 .login-body{
     background-image: url("../img/laptop.jpeg");
     background-size: cover;
