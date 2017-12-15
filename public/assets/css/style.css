@@ -3,6 +3,17 @@
     padding: 0px
 }
 
+#provider:hover {
+    cursor: pointer;
+}
+#app_name {
+    cursor: pointer;
+}
+
+#user:hover {
+    cursor: pointer;
+}
+
 .body {
     background-color: #95cdd0;
 }

@@ -5,5 +5,5 @@ $("#user").on("click", function () {
     window.location.replace(window.location.origin + "/user")
 });
 $("#app_name").on("click", function () {
-    window.location.replace(window.location.origin + "app_name");
+    window.location.replace(window.location.origin + "/");
 })
