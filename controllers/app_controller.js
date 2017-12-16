@@ -110,44 +110,45 @@ router.post("/api/patient", function (req, res) {
 });
 
 router.put("/api/patient/:id", function (req, res) {
-  var condition = "id = " + req.params.id + ";";
+
+  var condition = req.params.id;
+
 
   //console.log("condition", condition);
 
   model.update({
     First_Name: req.body.First_Name,
-    Last_Name: req.body.Last_Name,
-    DOB: req.body.DOB,
-    Street_Address: req.body.Street_Address,
-    Apartment_Num: req.body.Apartment_Num,
-    City: req.body.City,
-    State: req.body.State,
-    Zip_Code: req.body.Zip_Code,
-    Diagnosis_Date: req.body.Diagnosis_Date,
-    hepatitis: req.body.hepatitis,
-    hsv1: req.body.hsv1,
-    hsv2: req.body.hsv2,
-    hiv: req.body.hiv,
-    aids: req.body.aids,
-    hltv: req.body.hltv,
-    hpv: req.body.hpv,
-    molluscum_contag: req.body.molluscum_contag,
-    zika: req.body.zika,
-    chlamydia: req.body.chlamydia,
-    gonorrhea: req.body.gonorrhea,
-    syphilis: req.body.syphilis,
-    trich: req.body.trich,
-    crabs: req.body.crabs,
-    scabies: req.body.scabies,
-    bv_yeast: req.body.bv_yeast,
-    chancroid: req.body.chancroid,
-    donovanosis: req.body.donovanosis,
-    genital_warts: req.body.genital_warts,
-    pid: req.body.pid,
-    ngu: req.body.ngu,
-    inetst_parasites: req.body.inetst_parasites,
-    mycoplasma: req.body.mycoplasm,
-    lgv: req.body.lgv
+    Last_Name : req.body.Last_Name,
+    DOB : req.body.DOB,
+    Street_Address : req.body.Street_Address,
+    Apartment_Num  : req.body.Apartment_Num,
+    City  : req.body.City,
+    State  : req.body.State,
+    Zip_Code  : req.body.Zip_Code,
+    hepatitis  :  req.body.hepatitis,
+    hsv1  : req.body.hsv1,
+    hsv2  : req.body.hsv2,
+    hiv  :  req.body.hiv,
+    aids  : req.body.aids,
+    hltv  : req.body.hltv,
+    hpv  : req.body.hpv,
+    molluscum_contag  : req.body.molluscum_contag,
+    zika  : req.body.zika,
+    chlamydia  : req.body.chlamydia,
+    gonorrhea  : req.body.gonorrhea,
+    syphilis  :  req.body.syphilis,
+    trich  :  req.body.trich,
+    crabs  : req.body.crabs,
+    scabies  : req.body.scabies,
+    bv_yeast  : req.body.bv_yeast,
+    chancroid  : req.body.chancroid,
+    donovanosis  : req.body.donovanosis,
+    genital_warts  : req.body.genital_warts,
+    pid  :  req.body.pid,
+    ngu  :  req.body.ngu,
+    inetst_parasites  :  req.body.inetst_parasites,
+    mycoplasma  : req.body.mycoplasm,
+    lgv : req.body.lgv
   }, condition, function (result) {
   //  console.log(result);
   });
