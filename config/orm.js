@@ -77,6 +77,7 @@ var orm = {
       if (err) {
         throw err;
       }
+      //this is where the date problem comes from
       cb(result);
     })
   },

@@ -66,12 +66,13 @@ $(function () {
     $("#update_patient_info").on("click", function (e) {
         e.preventDefault();
         var patientID = $("#patientID").attr("value");
-        console.log($("#DOB").attr("value"))
+        var DOB = moment($("#DOB").attr("value")).format('YYYY MM DD');
+        DOB = DOB.replace(/ /gi, "/")
         var newRecord = {
             First_Name: $("#patient_firstName").attr("value"),
             Last_Name: $("#patient_LASTname").attr("value"),
             //DOB: $("#DOB").attr("value"),
-            DOB: "1990/12/12",
+            DOB: DOB,
             doctorsID: $("#docID").attr("value"),
             Street_Address: $("#patient_address").attr("value"),
             Apartment_Num: $("#patient_address_2").attr("value"),
