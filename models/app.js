@@ -36,7 +36,6 @@ var model = {
   },
 
   searchPatient: function (vals, cb) {
-    console.log("app.js" + vals);
     orm.searchPatient("find_patient", vals, function (res) {
       cb(res);
     });

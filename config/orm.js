@@ -104,10 +104,6 @@ var orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    console.log(queryString);
-
-
-
     connection.query(queryString, vals, function (err, result) {
       if (err) {
         throw err;
@@ -125,7 +121,6 @@ var orm = {
     queryString += " WHERE patientID = ";
     queryString += condition;
 
-    console.log(queryString);
 
     connection.query(queryString, function (err, result) {
 

@@ -24,6 +24,7 @@
     "hover.css": "^2.2.1",
     "instascan": "^1.0.0",
     "materializecss": "^1.0.11",
+    "moment": "^2.19.4",
     "mysql": "^2.15.0",
     "mysql-orm": "0.0.8",
     "path": "^0.12.7",

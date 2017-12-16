@@ -61,56 +61,58 @@ $(function () {
                 console.log("failed")
             })
     });
+  
 
+    $("#update_patient_info").on("click", function (e) {
+        e.preventDefault();
+        var patientID = $("#patientID").attr("value");
 
-
-
-    // var newRecord = {
-    //     First_Name: $("#patient_firstName").val().trim(),
-    //     Last_Name: $("#patient_lstName").val().trim(),
-    //     DOB: $("#patient_birth").val().trim(),
-    //     doctorsID: $("#docID").attr("value"),
-    //     Street_Address: $("#patient_address").val().trim(),
-    //     Apartment_Num: $("#patient_address_2").val().trim(),
-    //     City: $("#patient_city").val().trim(),
-    //     State: $("#patient_state").val().trim(),
-    //     Zip_Code: $("#patient_zip").val().trim(),
-    //     hepatitis: $("input[name='hepatitis']:checked").val(),
-    //     hsv1: $("input[name='hsv1']:checked").val(),
-    //     hsv2: $("input[name='hsv2']:checked").val(),
-    //     hiv: $("input[name='hiv']:checked").val(),
-    //     aids: $("input[name='aids']:checked").val(),
-    //     hltv: $("input[name='hltv']:checked").val(),
-    //     hpv: $("input[name='hpv']:checked").val(),
-    //     molluscum_contag: $("input[name='molluscum_contag']:checked").val(),
-    //     zika: $("input[name='zika']:checked").val(),
-    //     chlamydia: $("input[name='chlamydia']:checked").val(),
-    //     gonorrhea: $("input[name='gonorrhea']:checked").val(),
-    //     syphilis: $("input[name='syphilis']:checked").val(),
-    //     trich: $("input[name='trich']:checked").val(),
-    //     crabs: $("input[name='crabs']:checked").val(),
-    //     scabies: $("input[name='scabies']:checked").val(),
-    //     bv_yeast: $("input[name='bv_yeast']:checked").val(),
-    //     chancroid: $("input[name='chancroid']:checked").val(),
-    //     donovanosis: $("input[name='donovanosis']:checked").val(),
-    //     genital_warts: $("input[name='genital_warts']:checked").val(),
-    //     pid: $("input[name='pid']:checked").val(),
-    //     ngu: $("input[name='ngu']:checked").val(),
-    //     inetst_parasites: $("input[name='inetst_parasites']:checked").val(),
-    //     mycoplasm: $("input[name='Mycoplasm']:checked").val(),
-    //     lgv: $("input[name='lgv']:checked").val(),
-    // };
-
-    // $.ajax("/api/patient/" + patientID, {
-    //     type: "PUT",
-    //     data: newRecord
-    // }).done(
-    //     function (newRes) {
-    //         console.log("Patient Record Added")
-    //         console.log(newRes);
-    //     }
-    //     )
-
+        var newRecord = {
+            First_Name: $("#patient_firstName").attr("value"),
+            Last_Name: $("#patient_LASTname").attr("value"),
+            // DOB: $("#DOB").attr("value"),
+            DOB: "1990/12/12",
+            doctorsID: $("#docID").attr("value"),
+            Street_Address: $("#patient_address").attr("value"),
+            Apartment_Num: $("#patient_address_2").attr("value"),
+            City: $("#patient_city").attr("value"),
+            State: $("#patient_state").attr("value"),
+            Zip_Code: $("#patient_zip").attr("value"),
+            hepatitis: $("input[name='hepatitis']:checked").val(),
+            hsv1: $("input[name='hsv1']:checked").val(),
+            hsv2: $("input[name='hsv2']:checked").val(),
+            hiv: $("input[name='hiv']:checked").val(),
+            aids: $("input[name='aids']:checked").val(),
+            hltv: $("input[name='hltv']:checked").val(),
+            hpv: $("input[name='hpv']:checked").val(),
+            molluscum_contag: $("input[name='molluscum_contag']:checked").val(),
+            zika: $("input[name='zika']:checked").val(),
+            chlamydia: $("input[name='chlamydia']:checked").val(),
+            gonorrhea: $("input[name='gonorrhea']:checked").val(),
+            syphilis: $("input[name='syphilis']:checked").val(),
+            trich: $("input[name='trich']:checked").val(),
+            crabs: $("input[name='crabs']:checked").val(),
+            scabies: $("input[name='scabies']:checked").val(),
+            bv_yeast: $("input[name='bv_yeast']:checked").val(),
+            chancroid: $("input[name='chancroid']:checked").val(),
+            donovanosis: $("input[name='donovanosis']:checked").val(),
+            genital_warts: $("input[name='genital_warts']:checked").val(),
+            pid: $("input[name='pid']:checked").val(),
+            ngu: $("input[name='ngu']:checked").val(),
+            inetst_parasites: $("input[name='inetst_parasites']:checked").val(),
+            mycoplasm: $("input[name='Mycoplasm']:checked").val(),
+            lgv: $("input[name='lgv']:checked").val(),
+        }
+        console.log("new rec" + newRecord)
+        $.ajax("/api/patient/" + patientID, {
+            type: "PUT",
+            data: newRecord
+        }).done(
+            function (newRes) {
+                console.log("Patient Record Added")
+                console.log(newRes);
+            });
+    });
 
     $("#search_patient_info").on("click", function (event) {
         event.preventDefault();

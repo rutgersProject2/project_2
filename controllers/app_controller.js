@@ -54,7 +54,6 @@ router.get("/api/mobile/:id", function(req, res) {
     }
 
     QRCode.toDataURL("'"+safe+", "+x.patientID+", "+x.First_Name+", "+x.Last_Name+", "+Date()+"'", function (err, url){
-      console.log(url);
       res.json(url);
     })
     
