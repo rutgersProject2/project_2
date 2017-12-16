@@ -1,7 +1,7 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
-var burger = {
+var model = {
   all: function (cb) {
     orm.all("new_procedure", function (res) {
       cb(res);
@@ -30,7 +30,7 @@ var burger = {
   },
 
   update: function (objColVals, condition, cb) {
-    orm.update("patient_vu", objColVals, condition, function (res) {
+    orm.update("patient_tab", objColVals, condition, function (res) {
       cb(res);
     });
   },
@@ -44,4 +44,4 @@ var burger = {
 };
 
 
-module.exports = burger;
+module.exports = model;
