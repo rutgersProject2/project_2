@@ -35,7 +35,7 @@ router.get("/provider/:id/patient/:patientId", function (req, res) {
   model.findPatient([
     req.params.patientId,
   ], function (data) {
-    console.log("patient data " + data)
+    console.log("patient data " + jQuery.parseJSON(data));
     res.render("patient", { patientInfo: data });
   })
 });

@@ -70,7 +70,7 @@ $(function () {
         var newRecord = {
             First_Name: $("#patient_firstName").attr("value"),
             Last_Name: $("#patient_LASTname").attr("value"),
-            DOB: $("#DOB").attr("value"),
+            //DOB: $("#DOB").attr("value"),
             DOB: "1990/12/12",
             doctorsID: $("#docID").attr("value"),
             Street_Address: $("#patient_address").attr("value"),
