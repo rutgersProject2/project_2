@@ -73,12 +73,10 @@ var orm = {
   },
   findPatient: function (tableName, patientID, cb) {
     var queryString = "SELECT * FROM " + tableName + " WHERE patientID = " + patientID + ";"
-    console.log(queryString)
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
-      console.log(result)
       cb(result);
     })
   },
