@@ -28,13 +28,15 @@
             <div>
                 <div class="card">
                     {{#each patientInfo}}
-                    <div class="card-header row">
-                        <div class="col-lg-9">
-                            
-                            <h3>Name: {{First_Name}} {{Last_Name}}</h3>
-                        </div>
-                        <div class="col-lg-3">
-                            <h3>ID: {{patientID}}</h3>
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-9">
+
+                                <h3>Name: {{First_Name}} {{Last_Name}}</h3>
+                            </div>
+                            <div class="col-lg-3">
+                                <h3>ID: {{patientID}}</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -51,10 +53,10 @@
                                 <h3>{{City}}</h3>
                             </div>
                             <div class="col-lg-2">
-                               <h3> {{State}}</h3>
+                                <h3> {{State}}</h3>
                             </div>
                             <div class="col-lg-2">
-                               <h3>{{Zip_Code}}</h3>
+                                <h3>{{Zip_Code}}</h3>
                             </div>
                         </div>
                     </div>
@@ -598,6 +600,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-lg-9"></div>
+                                <div class="col-lg-3">
+                                    <button id="update_patient_info" type="button" class="btn btn-dark">Save Info</button>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </div>
