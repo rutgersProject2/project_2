@@ -6,9 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/a7aa792cdb.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Anton|Leckerli+One|Montserrat|Yellowtail" rel="stylesheet">
 </head>
@@ -29,13 +32,20 @@
             </div>
         </div>
     </div>
+    <div id="cameraModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <video id="scan"></video>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-12 text-center">
             <h2 id="app_name">Verify
-                    <span>
-                        <img id="logo" src="assets/img/verify-logo-eee.png" height="35px" width="35px">
-                    </span>
-                </h2>
+                <span>
+                    <img id="logo" src="assets/img/verify-logo-eee.png" height="35px" width="35px">
+                </span>
+            </h2>
         </div>
     </div>
     <div class="row">
@@ -45,25 +55,56 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-left">
+                    <a id="camera">
+                        <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script type="text/javascript">
-    $(window).on('load', function() {
-        $('#phoneModal').modal('show');
-    });
-    $("#submitUser").on("click", function(e) {
-        e.preventDefault();
-        var id = $("#loginUserID").val().trim();
-        $.ajax("/api/mobile/" + id, {
-            type: "GET"
-        }).done(
-            function(response) {
-                $("#qrPlaceholder").html("<img src= '" + response + "'>")
-            }
-        )
-    })
+        $(window).on('load', function () {
+            $('#phoneModal').modal('show');
+        });
+        $("#submitUser").on("click", function (e) {
+            e.preventDefault();
+            var id = $("#loginUserID").val().trim();
+            $.ajax("/api/mobile/" + id, {
+                type: "GET"
+            }).done(
+                function (response) {
+                    $("#qrPlaceholder").html("<img src= '" + response + "'>")
+                }
+                )
+        })
+        $("#camera").on("click", function () {
+            $("#cameraModal").modal('show');
+        })
+
+        // instascan stuff
+
+        // let scanner = new Instascan.Scanner({ video: document.getElementById('scan') });
+        // scanner.addListener('scan', function (content) {
+        //     console.log(content);
+        // });
+        // Instascan.Camera.getCameras().then(function (cameras) {
+        //     if (cameras.length > 0) {
+        //         scanner.start(cameras[0]);
+        //     } else {
+        //         console.error('No cameras found.');
+        //     }
+        // }).catch(function (e) {
+        //     console.error(e);
+        // });
+
     </script>
 </body>
 <style>
-/*.modal {
+    /*.modal {
     background: black;
     color: white;
 }
