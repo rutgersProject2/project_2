@@ -12,7 +12,7 @@ if (process.env.JAWSDB_URL) {
     //enter user
     user: "root",
     //enter password
-    password: "xgp10101",
+    password: "password",
     //create database
     database: "dbo"
   });

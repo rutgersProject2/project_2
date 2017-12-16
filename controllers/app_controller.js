@@ -40,23 +40,24 @@ router.get("/provider/:id/patient/:patientId", function (req, res) {
   })
 });
 
-router.get("/api/mobile/:id", function(req, res) {
+router.get("/api/mobile/:id", function (req, res) {
   model.findPatient([
     req.params.id,
   ], function (data) {
     var x = data[0];
     var safe;
+    console.log(data);
     console.log(data[0]);
-    if(x.hepatitis === 1 || x.hsv1 === 1 || x.hsv2 === 1 || x.hiv === 1 || x.aids === 1 || x.hltv === 1 || x.hpv === 1 || x.molluscum_contag === 1 || x.zika === 1 || x.chlamydia === 1 || x.gonorrhea === 1 || x.syphilis === 1 || x.trich === 1 || x.crabs === 1 || x.scabies === 1 || x.bv_yeast === 1 || x.chancroid === 1 || x.donovanosis === 1 || x.genital_warts === 1 || x.pid === 1 || x.ngu === 1 || x.inetst_parasites === 1 || x.mycoplasma === 1 || x.lgv === 1){
+    if (x.hepatitis === 1 || x.hsv1 === 1 || x.hsv2 === 1 || x.hiv === 1 || x.aids === 1 || x.hltv === 1 || x.hpv === 1 || x.molluscum_contag === 1 || x.zika === 1 || x.chlamydia === 1 || x.gonorrhea === 1 || x.syphilis === 1 || x.trich === 1 || x.crabs === 1 || x.scabies === 1 || x.bv_yeast === 1 || x.chancroid === 1 || x.donovanosis === 1 || x.genital_warts === 1 || x.pid === 1 || x.ngu === 1 || x.inetst_parasites === 1 || x.mycoplasma === 1 || x.lgv === 1) {
       safe = false;
-    }else{
+    } else {
       safe = true;
     }
 
-    QRCode.toDataURL("'"+safe+", "+x.patientID+", "+x.First_Name+", "+x.Last_Name+", "+Date()+"'", function (err, url){
+    QRCode.toDataURL("'" + safe + ", " + x.patientID + ", " + x.First_Name + ", " + x.Last_Name + ", " + Date() + "'", function (err, url) {
       res.json(url);
     })
-    
+
   })
 })
 
@@ -100,7 +101,7 @@ router.post("/api/patient", function (req, res) {
     req.body.Zip_Code
 
   ], function (result) {
-    
+
     console.log(result);
     res.json(result)
 
@@ -117,39 +118,39 @@ router.put("/api/patient/:id", function (req, res) {
 
   model.update({
     First_Name: req.body.First_Name,
-    Last_Name : req.body.Last_Name,
-    DOB : req.body.DOB,
-    Street_Address : req.body.Street_Address,
-    Apartment_Num  : req.body.Apartment_Num,
-    City  : req.body.City,
-    State  : req.body.State,
-    Zip_Code  : req.body.Zip_Code,
-    hepatitis  :  req.body.hepatitis,
-    hsv1  : req.body.hsv1,
-    hsv2  : req.body.hsv2,
-    hiv  :  req.body.hiv,
-    aids  : req.body.aids,
-    hltv  : req.body.hltv,
-    hpv  : req.body.hpv,
-    molluscum_contag  : req.body.molluscum_contag,
-    zika  : req.body.zika,
-    chlamydia  : req.body.chlamydia,
-    gonorrhea  : req.body.gonorrhea,
-    syphilis  :  req.body.syphilis,
-    trich  :  req.body.trich,
-    crabs  : req.body.crabs,
-    scabies  : req.body.scabies,
-    bv_yeast  : req.body.bv_yeast,
-    chancroid  : req.body.chancroid,
-    donovanosis  : req.body.donovanosis,
-    genital_warts  : req.body.genital_warts,
-    pid  :  req.body.pid,
-    ngu  :  req.body.ngu,
-    inetst_parasites  :  req.body.inetst_parasites,
-    mycoplasma  : req.body.mycoplasm,
-    lgv : req.body.lgv
+    Last_Name: req.body.Last_Name,
+    DOB: req.body.DOB,
+    Street_Address: req.body.Street_Address,
+    Apartment_Num: req.body.Apartment_Num,
+    City: req.body.City,
+    State: req.body.State,
+    Zip_Code: req.body.Zip_Code,
+    hepatitis: req.body.hepatitis,
+    hsv1: req.body.hsv1,
+    hsv2: req.body.hsv2,
+    hiv: req.body.hiv,
+    aids: req.body.aids,
+    hltv: req.body.hltv,
+    hpv: req.body.hpv,
+    molluscum_contag: req.body.molluscum_contag,
+    zika: req.body.zika,
+    chlamydia: req.body.chlamydia,
+    gonorrhea: req.body.gonorrhea,
+    syphilis: req.body.syphilis,
+    trich: req.body.trich,
+    crabs: req.body.crabs,
+    scabies: req.body.scabies,
+    bv_yeast: req.body.bv_yeast,
+    chancroid: req.body.chancroid,
+    donovanosis: req.body.donovanosis,
+    genital_warts: req.body.genital_warts,
+    pid: req.body.pid,
+    ngu: req.body.ngu,
+    inetst_parasites: req.body.inetst_parasites,
+    mycoplasma: req.body.mycoplasm,
+    lgv: req.body.lgv
   }, condition, function (result) {
-  //  console.log(result);
+    //  console.log(result);
   });
 });
 
