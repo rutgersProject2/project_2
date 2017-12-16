@@ -32,12 +32,23 @@
                         <div class="row">
                             <div class="col-lg-9">
                                 <h3 id="patient_firstName" value="{{First_Name}}">Name: {{First_Name}} {{Last_Name}}</h3>
-                            </div id="patient_lstName" value="{{Last_Name}}">
+                            </div>
                             <div class="col-lg-3">
-                                <h3>ID: {{patientID}}</h3>
+                                <h3 id="patientID" value="{{patientID}}">ID: {{patientID}}</h3>
                             </div>
                         </div>
                     </div>
+
+                    {{!-- Ignore these --}}
+                    <div id="patient_LASTname" value="{{Last_Name}}"></div>
+                    <div id="DOB" value="{{DOB}}"></div>
+                    <div id="docID" value="{{doctorsID}}"></div>
+                    <div id="patient_address" value="{{Street_Address}}"></div>
+                    <div id="patient_address_2" value="{{Apartment_Num}}"></div>
+                    <div id="patient_city" value="{{City}}"></div>
+                    <div id="patient_state" value="{{State}}"></div>
+                    <div id="patient_zip" value="{{Zip_Code}}"></div>
+                    {{!-- To this/ future update --}}
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-6">

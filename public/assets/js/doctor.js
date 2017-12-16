@@ -62,21 +62,23 @@ $(function () {
             })
     });
 
+    
+
     $("#update_patient_info").on("click", function (e) {
         e.preventDefault();
+        var patientID = $("#patientID").attr("value");
 
         var newRecord = {
-            doctorsID: $("#docID").attr("value"),
-
             First_Name: $("#patient_firstName").attr("value"),
-            Last_Name: $("#patient_lstName").attr("value"),
-            DOB: $("#patient_birth").val().trim(),
+            Last_Name: $("#patient_LASTname").attr("value"),
+            // DOB: $("#DOB").attr("value"),
+            DOB: "1990/12/12",
             doctorsID: $("#docID").attr("value"),
-            Street_Address: $("#patient_address").val().trim(),
-            Apartment_Num: $("#patient_address_2").val().trim(),
-            City: $("#patient_city").val().trim(),
-            State: $("#patient_state").val().trim(),
-            Zip_Code: $("#patient_zip").val().trim(),
+            Street_Address: $("#patient_address").attr("value"),
+            Apartment_Num: $("#patient_address_2").attr("value"),
+            City: $("#patient_city").attr("value"),
+            State: $("#patient_state").attr("value"),
+            Zip_Code: $("#patient_zip").attr("value"),
             hepatitis: $("input[name='hepatitis']:checked").val(),
             hsv1: $("input[name='hsv1']:checked").val(),
             hsv2: $("input[name='hsv2']:checked").val(),
@@ -101,7 +103,7 @@ $(function () {
             inetst_parasites: $("input[name='inetst_parasites']:checked").val(),
             mycoplasm: $("input[name='Mycoplasm']:checked").val(),
             lgv: $("input[name='lgv']:checked").val(),
-        };
+        }
         console.log("new rec" + newRecord)
         $.ajax("/api/patient/" + patientID, {
             type: "PUT",

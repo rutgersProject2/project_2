@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var path = require("path");
-var QRCode = require("qrcode")
+var QRCode = require("qrcode");
 var model = require("../models/app.js");
 
 router.get("/", function (req, res) {
@@ -35,10 +35,10 @@ router.get("/provider/:id/patient/:patientId", function (req, res) {
   model.findPatient([
     req.params.patientId,
   ], function (data) {
-    console.log("patient data " + data)
     res.render("patient", { patientInfo: data });
   })
 });
+
 
 router.get("/api/mobile/:id", function (req, res) {
   model.findPatient([
@@ -149,7 +149,7 @@ router.put("/api/patient/:id", function (req, res) {
     mycoplasma: req.body.mycoplasm,
     lgv: req.body.lgv
   }, condition, function (result) {
-    console.log(result);
+    console.log("DONE")
   });
 });
 
