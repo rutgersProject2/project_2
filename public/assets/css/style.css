@@ -6,6 +6,7 @@
 #provider:hover {
     cursor: pointer;
 }
+
 #app_name {
     cursor: pointer;
 }
@@ -14,14 +15,15 @@
     cursor: pointer;
 }
 
-body {
+.body {
     background-color: #95cdd0;
 }
 
 #fix {
     margin-bottom: 50px;
 }
-.login-body{
+
+.login-body {
     background-image: url("../img/laptop.jpeg");
     background-size: cover;
     margin-bottom: 250px;
@@ -37,7 +39,8 @@ body {
     overflow: hidden;
     top: 0;
     left: 0;
-    -webkit-filter: sepia(50%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: sepia(50%);
+    /* Safari 6.0 - 9.0 */
     filter: sepia(50%);
 }
 
@@ -170,6 +173,19 @@ label {
     margin-top: 50px;
 }
 
+#banner_info_DR {
+    /*font-family: 'Cabin', sans-serif;*/
+    /*font-family: 'Fjalla One', sans-serif;*/
+    /*font-family: 'Libre Baskerville', serif;*/
+    font-family: 'Barlow', sans-serif;
+    margin-top: 50px;
+    /*margin-bottom: 0px;*/
+}
+
+#btn-div {
+    margin-top: 15px;
+}
+
 .banner-main {
     /*font-weight: bold;*/
     font-size: 50px;
@@ -199,6 +215,7 @@ label {
     background-image: url("../img/doctors.jpeg");
     background-size: cover;
     height: 410px;
+    padding-right: 50px;
 }
 
 #provider_container {
@@ -215,12 +232,33 @@ h5 {
     margin-bottom: 80px;
 }
 
-#createADoc {
+#createADoc,
+{
     margin-top: 0;
     border-style: solid;
     border-width: 2px;
     border-color: #eee;
+    padding: 25px;
 }
+
+#patient_profile {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#patient_doctor {
+    margin-bottom: 25px;
+}
+
+#add_patient {
+    margin-bottom: 25px;
+}
+
+
+/*#event {
+    height: 250px;
+}
+*/
 
 #sub_footer_HP {
     color: #eee;
