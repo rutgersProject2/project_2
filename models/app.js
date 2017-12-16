@@ -12,6 +12,11 @@ var model = {
       cb(res);
     });
   },
+  findPatient: function (patientID, cb) {
+    orm.findPatient("patient_vu", patientID, function (res) {
+      cb(res);
+    });
+  },
   createDoc: function (vals, cb) {
     orm.createDoc("new_doctor", vals, function (res) {
       cb(res);

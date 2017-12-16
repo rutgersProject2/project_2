@@ -71,7 +71,17 @@ var orm = {
       cb(result);
     })
   },
-
+  findPatient: function (tableName, patientID, cb) {
+    var queryString = "SELECT * FROM " + tableName + " WHERE patientID = " + patientID + ";"
+    console.log(queryString)
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      console.log(result)
+      cb(result);
+    })
+  },
   createDoc: function (stored_proc, vals, cb) {
     var queryString = "call " + stored_proc;
 
@@ -95,7 +105,10 @@ var orm = {
     queryString += " (";
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
+
     console.log(queryString);
+
+
 
     connection.query(queryString, vals, function (err, result) {
       if (err) {
@@ -128,28 +141,28 @@ var orm = {
     });
   },
 
-  searchPatient: function (stored_proc, vals, cb) {
+//   searchPatient: function (stored_proc, vals, cb) {
 
-    console.log("ORM.js " + vals);
+//     console.log("ORM.js " + vals);
 
 
-    var queryString = "call " + stored_proc;
+//     var queryString = "call " + stored_proc;
 
-    queryString += " (";
-    queryString += vals;
-    queryString += ") ";
+//     queryString += " (";
+//     queryString += vals;
+//     queryString += ") ";
 
-    console.log(queryString);
+//     console.log(queryString);
 
-    connection.query(queryString, vals, function (err, result) {
-      if (err) {
-        throw err;
-      }
-      console.log(vals);
-      cb(result);
+//     connection.query(queryString, vals, function (err, result) {
+//       if (err) {
+//         throw err;
+//       }
+//       console.log(vals);
+//       cb(result);
 
-    });
-  }
+//     });
+//   }
 };
 
 module.exports = orm;

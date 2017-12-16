@@ -3,10 +3,8 @@ var express = require("express");
 var router = express.Router();
 var path = require("path");
 
-// Import the model (app.js) to use its database functions.
 var model = require("../models/app.js");
 
-// Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
 
   res.sendFile(path.join(__dirname, "../public/home.html"));
@@ -20,21 +18,24 @@ router.get("/user", function (req, res) {
   res.sendFile(path.join(__dirname, "../public/patient_login.html"))
 });
 
-router.get("/patient/records/:id", function (req, res) {
-  model.searchPatient([
-    req.params.id
-  ], function (data) {
-    res.render("patient", { patientInfo: data });
-  })
-});
-
 router.get("/provider/:id", function (req, res) {
   model.findDoc([
     req.params.id,
   ], function (data) {
+    console.log("doc data " + data);
     res.render("index", { docProfile: data })
   })
+});
 
+router.get("/provider/:id/patient/:patientId", function (req, res) {
+  console.log(req.params.patientId);
+  console.log(req.params.id);
+  model.findPatient([
+    req.params.patientId,
+  ], function (data) {
+    console.log("patient data " + data)
+    res.render("patient", { patientInfo: data });
+  })
 });
 
 router.post("/api/doctors", function (req, res) {
@@ -77,7 +78,8 @@ router.post("/api/patient", function (req, res) {
     req.body.Zip_Code
 
   ], function (result) {
-
+    
+    console.log(result);
     res.json(result)
 
   });
@@ -85,9 +87,11 @@ router.post("/api/patient", function (req, res) {
 });
 
 router.put("/api/patient/:id", function (req, res) {
+
   var condition = req.params.id;
 
-  console.log("condition", condition);
+
+  //console.log("condition", condition);
 
   model.update({
     First_Name: req.body.First_Name,
@@ -123,12 +127,7 @@ router.put("/api/patient/:id", function (req, res) {
     mycoplasma  : req.body.mycoplasm,
     lgv : req.body.lgv
   }, condition, function (result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+  //  console.log(result);
   });
 });
 
