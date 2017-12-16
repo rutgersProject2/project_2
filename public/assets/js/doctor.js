@@ -106,7 +106,8 @@ $(function () {
             .fail(function () {
                 console.log("failed")
             })
-    })
+    });
+    
 
     $("#search_patient_info").on("click", function (event) {
         event.preventDefault();
