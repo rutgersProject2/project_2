@@ -30,6 +30,7 @@ var model = {
   },
 
   update: function (objColVals, condition, cb) {
+    console.log('here');
     orm.update("patient_tab", objColVals, condition, function (res) {
       cb(res);
     });
